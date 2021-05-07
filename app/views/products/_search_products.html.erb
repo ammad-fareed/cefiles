@@ -1,0 +1,25 @@
+<%= simple_form_for @q,url: :search_products, html: {class: 'form-search product-search'},method: :get do |f| %>
+  <div class="products-row">
+    <div class="form-rows">
+      <%= f.input  :product_category_id_eq,as: :select,collection:ProductCategory.filtered_categories.compact,include_blank:"Product Category ",label:false, input_html:{class:'custom-select mb-3 search-prod-cat'}  %>
+    </div>
+    <span class="cat-prod-count"></span>
+    <div class="clear"></div>
+    <div class="full-search-products">
+      <div class="form-rows">
+        <%= f.input  :name_cont,placeholder:"Product Name",label:false,input_html: {class: 'input-field'} %>
+      </div>
+      <div class="form-rows">
+        <%= f.input  :model_number_cont,placeholder:'Model Number',label: false,input_html: {class: 'input-field'} %>
+      </div>
+      <div class="form-rows">
+        <%= f.input  :description_cont,placeholder:'Product Description',label:false,input_html: {class: 'input-field'} %>
+      </div>
+      <div class="form-rows">
+        <%= f.input  :company_name_cont,placeholder:'Company Name',label:false, input_html: {class: 'input-field'} %>
+      </div>
+    </div>
+    <%= f.submit "Search", class: 'btn btn-primary' %>
+    <% #= link_to "Advanced Search" , '#',class:"prod-search" %>
+  </div>
+<% end %>

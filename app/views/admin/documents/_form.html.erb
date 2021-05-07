@@ -1,0 +1,27 @@
+<%= simple_form_for [:admin, @product, @document] do |f| %>
+  <div class="products-row">
+    <div class="form-rows">
+      <%= f.input :title,label:"Title",error:"Required field",input_html:{class:"input-field"} %>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-rows">
+          <%= f.input :description,label:"Description",input_html:{class:"text-area custom-textarea",rows:"5"} %>
+        </div>
+      </div>
+    </div>
+    <div class="form-rows">
+      <div class="custom-file">
+        <%= f.input :file,as: :file,error:"Required field",input_html:{class:"custom-file-input"},label_html:{class:"custom-file-label"} %>
+        <%= f.input :file_cache, as: :hidden %>
+      </div>
+    </div>
+    <div class="form-rows">
+      <%= f.input :public,as: :boolean,label:"Public",input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"} %>
+    </div>
+    <div class="form-rows">
+      <%=f.submit f.object.new_record?? "Create Document" : "Save",class:"submit-btn",data: { disable_with: 'Please wait...' } %>
+    </div>
+  </div>
+
+<%end %>

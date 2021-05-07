@@ -1,0 +1,32 @@
+<div class="content-page-holder">
+  <div class="products-inner">
+    <div class="products-header">
+      <h1>Enquiries</h1>
+    </div>
+    <div class="tables-holder">
+
+      <div class="table-responsive-sm">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col"><%=sort_link(@q, :user_given_name, "Name") %></th>
+            <th scope="col"><%=sort_link(@q, :email, "Email") %></th>
+            <th scope="col"><%=sort_link(@q, :created_at, "Created At") %></th>
+          </tr>
+          </thead>
+          <tbody>
+          <%@enquiries.each do |enquiry| %>
+            <tr>
+              <td><%=link_to enquiry.user.try(:display_name),admin_enquiry_path(enquiry) %></td>
+              <td><%= enquiry.try :email %></td>
+              <td><%= format_date_time enquiry.created_at %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <%=paginate @enquiries %>
+      </div>
+    </div>
+  </div>
+
+</div>

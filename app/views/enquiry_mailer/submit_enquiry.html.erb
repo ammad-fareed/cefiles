@@ -1,0 +1,4 @@
+A new enquiry has been submitted from the CE files website at <%= l(@enquiry.created_at, format: :long) %>:
+
+From:    <%= @enquiry.name %> (<%= @enquiry.email %>)
+Message: <%= @enquiry.content %>

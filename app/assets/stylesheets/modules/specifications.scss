@@ -1,0 +1,93 @@
+.counter-holder {
+  margin-bottom: 0px;
+ }
+span.counter {
+  font-size: 22px;
+  color: #a3a3a3;
+  font-style: italic;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px 15px;
+}
+.specs-header {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 0 0 25px;
+  background: $white;
+  h1 {
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: serif;
+    font-size: 32px;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 11fr 1fr;
+    align-items: center;
+  }
+}
+.specs-content {
+  background: #efefef;
+  padding: 10px 0px;
+  min-height: 600px;
+}
+.specs-col {
+  border: 1px solid #d8d8d8;
+  background: $white;
+  border-top: 4px solid #000000;
+  padding: 20px 15px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  min-height: 370px;
+
+  img {
+    width: 100%;
+    max-height: 300px;
+  }
+  h2 {
+    font-size: 22px;
+    color: #767676;
+    padding: 0 0 20px;
+    margin: 0;
+    font-style: italic;
+    font-weight: normal;
+    font: italic 22px/1 "minion-pro",serif;
+  }
+  p {
+    font-size: 13px;
+    color: #848484;
+  }
+  &.list {
+    border-top: 4px solid #606060;
+  }
+  &.detail {
+    border-top: 4px solid #d8d8d8;
+  }
+}
+.documentation-section{
+  border-top: 4px solid #1e7380 !important;
+  a{
+    text-decoration: underline;
+  }
+}
+.specs-content {
+  .container {
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 2fr);
+      column-gap: 30px;
+    }
+  }
+}
+.specs-row {
+  padding: 0 0 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  span {
+    font-size: 13px;
+    color: #848484;
+    overflow-wrap: anywhere;
+  }
+
+}

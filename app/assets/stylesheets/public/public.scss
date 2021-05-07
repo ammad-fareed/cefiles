@@ -1,0 +1,85 @@
+.terms-and-conditions,.privacy{
+  width: 67%;
+  padding-bottom: 20px;
+  h1,h2{
+    font: italic 32px/1.5 "minion-pro", Serif;
+    color: #767676;
+
+  }
+  h1{
+    font-size: 28px;
+  }
+  h2{
+    font-size: 24px;
+  }
+  ol,p,ul>li{
+    color: #848484;
+    font-size: 0.8rem;
+  }
+}
+.privacy{
+
+  p{
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  h1{
+    border-bottom: none;
+    margin-bottom: -18px;
+  }
+  .privacy-apply{
+    margin-bottom: 0px;
+  }
+  .spaced-lis{
+    margin-left: 25px;
+  }
+}
+.product-details{
+  margin-bottom: 2rem;
+    section.photo{
+      display: block;
+      line-height: 0;
+      text-align: center;
+      overflow: hidden;
+      box-sizing: border-box;
+      box-shadow: inset 0 0 0 1px #dbdbdb, 0 0.5px 1px rgba(0,0,0,0.1);
+      img{
+        width: auto;
+        max-height: 300px;
+        display: inline-block;
+        padding-top: 8%;
+        padding-bottom: 3%;
+      }
+    }
+
+}
+.product-search{
+  .form-group{
+    margin-bottom: 0rem !important;
+  }
+.select2-selection{
+  height: 32px;
+}
+}
+.product-search-listing{
+  margin-top: 2rem;
+  table{
+    tr{
+      td{
+        overflow-wrap: anywhere;
+      }
+    }
+  }
+}
+.custom-container{
+  width: 54%;
+}
+@media screen and (max-width: 600px) {
+  .custom-container{
+    width: 90%;
+    margin-top: 1rem;
+  }
+  .terms-and-conditions,.privacy{
+    width: 80%;
+  }
+}

@@ -1,0 +1,28 @@
+<div class="header-holder accountpage clearfix" style="padding: 10px 0px">
+  <div class="menu-btn">
+    <div class="navi-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="logo">
+    <%=link_to root_path do  %><%=image_tag "logo.svg",alt:"logo" %> <%end%>
+  </div>
+  <div class="navigation-holder">
+    <ul class="navigation">
+      <li><%=link_to "Home",root_path %></li>
+      <%if user_signed_in?  %>
+        <li><%=link_to "Dashboard",admin_root_path %></li>
+      <%end %>
+      <li><%= link_to "Contact",contact_path %></li>
+      <%if current_user %>
+        <li><%=link_to "Logout",destroy_user_session_path, method: :delete,class:"active" %></li>
+      <%else %>
+        <li><%=link_to "Register",plans_path %></li>
+        <li><%=link_to "Login" , new_user_session_path %></li>
+      <%end %>
+    </ul>
+  </div>
+</div>

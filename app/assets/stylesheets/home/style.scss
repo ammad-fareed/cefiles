@@ -1,0 +1,94 @@
+.files-content {
+  max-width: 420px;
+  margin: 60px auto 60px;
+  border-top: 1px dotted $files;
+  border-bottom: 1px dotted $files;
+  padding: 15px 0px;
+  p {
+    color: $files;
+    font-size: 13px;
+    line-height: 18px;
+    font-family: $font;
+    text-align: center;
+    padding: 0 0 0px;
+  }
+}
+.search-holder {
+  max-width: 420px;
+  margin: 0 auto 110px;
+  background: $lightGray;
+  -webkit-border-top-left-radius: 25px;
+  -webkit-border-bottom-right-radius: 25px;
+  -moz-border-radius-topleft: 25px;
+  -moz-border-radius-bottomright: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 25px 25px 25px;
+  h2 {
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: #042d38;
+    padding: 0 0 15px;
+    margin: 0px;
+  }
+  & .form-row {
+    position: relative;
+    padding: 0 0 20px;
+    .input-field {
+      width: calc(100% - 70px);
+      border: none;
+      background: $white;
+      color: $gray;
+      font-size: 13px;
+      padding: 7px 15px;
+      border-radius: 5px;
+    }
+    .search-submit {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      padding: 7px 5px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      background: $files;
+      color: $white;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.5s;
+      font-family: Arial;
+      &:hover {
+        //background: $black;
+        //color: $white;
+      }
+    }
+
+  }
+  & .detail-search {
+    text-align: center;
+    a {
+      display: inline-block;
+      padding: 7px 7px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      background: $files;
+      color: $white;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.5s;
+      font-family: Arial;
+      &:hover {
+        //background: $black;
+        //color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+  @include tablet {
+    padding: 20px 45px;
+  }
+}

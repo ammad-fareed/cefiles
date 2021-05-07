@@ -1,0 +1,85 @@
+<%= simple_form_for [:admin, @product] do |f| %>
+  <div class="products-row">
+    <h2>Product Summary</h2>
+    <div class="product-cols">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-rows">
+            <%=f.input :name,error:"Required field", input_html:{class:"input-field"} %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-rows">
+            <%=f.association :company,collection: Company.unarchived.pluck(:name,:id),error:"Required field",include_blank:true,prompt:"Select Company",input_html:{class:"custom-select mb-3"} if can? :change_company, @product %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-rows">
+      <%= f.input :published,as: :boolean,label:"Published? By checking this box, this product record will be publicly available on the CE files website for anyone to view.",input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"} %>
+    </div>
+    <%if !@product.new_record? %>
+      <div class="form-rows qr-container">
+        <%= @svg.present? && @svg.html_safe %>
+      </div>
+    <%end %>
+  </div>
+  <div class="products-row">
+    <h2>Product Details</h2>
+    <div class="form-rows">
+      <%= f.input :model_number ,error:"Required field",label:"Model/Type No",input_html:{class:"input-field"} %>
+    </div>
+    <div class="form-rows">
+     <%= f.input :product_category_id,collection:ProductCategory.formatted_categories,error:"Required field",input_html:{class:"custom-select mb-3"}, required: true ,label:"Product Category" %>
+    </div>
+    <div class="form-rows">
+      <div class="custom-file">
+        <%= f.input :image,as: :file,input_html:{class:"custom-file-input"},label_html:{class:"custom-file-label"} %>
+      </div>
+
+    </div>
+    <div class="form-rows">
+      <label for="">Only jpg, jpeg, png, gif files accepted</label>
+    </div>
+    <%if @product.image.present? %>
+      <div class="form-rows">
+        <label>Existing Image</label>
+        <%= image_tag @product.image.url,class:"prod-image" %>
+      </div>
+      <div class="form-rows">
+        <%= f.input :remove_image, as: :boolean,input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"} %>
+        <%= f.input :image_cache, as: :hidden %>
+      </div>
+    <%end %>
+    <div class="product-cols has-margin">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-rows">
+            <%=f.input :description,as: :text,error:"Required field", input_html:{class:"text-area",rows:"5"},label:"Description" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-rows">
+            <%=f.input :notes,as: :text, input_html:{class:"text-area",rows:"5"},label:"Notes" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="products-row">
+    <div class="form-rows">
+      <%= f.input :sales_rep_check,as: :boolean,label:"Sales Representation",input_html:{id:"sales-rep-option",checked: f.object.all_suppliers.count > 0, class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"} %>
+    </div>
+    <div class="all_suppliers">
+      <%=f.simple_fields_for :all_suppliers do |supplier| %>
+          <%= render "all_supplier_fields",f:supplier,first_supplier:f.object.all_suppliers.length==1 %>
+        <%end %>
+      <div class="links add-sale-rep">
+        <%= link_to_add_association 'Add Sale Representative', f, :all_suppliers%>
+      </div>
+    </div>
+  </div>
+  <div class="form-rows">
+    <%=f.submit class:"submit-btn",data: { disable_with: 'Please wait...' } %>
+  </div>
+<%end %>

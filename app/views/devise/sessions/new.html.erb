@@ -1,0 +1,29 @@
+<div class="content-page-holder">
+  <div class="login">
+    <h1>Login</h1>
+    <div class="form-holder">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-rows">
+          <%=f.input :email, label:"Email",input_html:{class:"input-field"} %>
+        </div>
+        <div class="form-rows">
+          <%=f.input :password, label:"Password",input_html:{class:"input-field"} %>
+        </div>
+
+        <div class="form-rows">
+          <% if devise_mapping.rememberable? %>
+            <%=f.input :remember_me, as: :boolean ,input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"},label:"Remember me" %>
+          <%end %>
+        </div>
+        <div class="submit-row">
+          <%=f.submit value:"Login",class:"submit-btn",data:{disable_with:"Logging In..."} %>
+        </div>
+      <%end %>
+      <div class="links-row">
+        <%= render "devise/shared/links2" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

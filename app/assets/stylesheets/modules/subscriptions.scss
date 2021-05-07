@@ -1,0 +1,20 @@
+.payment-info{
+  label{
+    float: left;
+  }
+  h4{
+    text-align: center;
+  }
+}
+.subscribe-btn{
+  text-align: center;
+}
+#card-errors{
+  visibility: hidden;
+}
+#postal-code{
+  border: 1px solid #ced4da;
+}
+.subscription-container .plan-box{
+  margin-top: 1rem;
+}

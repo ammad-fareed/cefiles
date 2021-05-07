@@ -1,0 +1,21 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-body">
+      <div class="payment-info">
+        <h4>Payment Info</h4>
+        <%= simple_form_for :company, url:update_card_admin_companies_path,html:{class:"form-horizontal",id:"subscription-form"}, method: :post do |f| %>
+          <div class="row">
+            <div class="col-md-12 center-block text-center">
+              <%= render 'shared/stripe_form' %>
+            </div>
+          </div>
+          <div class="form-group row mt-3">
+            <div class="col-md-12 subscribe-btn">
+              <%= f.button :submit, "Update",class:"btn btn-primary" , data: { disable_with:"Please wait..." } %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

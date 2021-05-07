@@ -1,0 +1,124 @@
+<div class="content-page-holder container">
+  <div class="products-inner">
+    <div class="products-header">
+      <h1>Company Profile</h1>
+      <div class="">
+        <%=link_to "Edit",edit_admin_company_path(@company.id),class:"btn btn-primary action-btn" %>
+        <%if @company.unarchived? %>
+          <%=link_to t('activerecord.actions.show_public'), company_path(@company.id), target: '_blank',class:"btn btn-primary action-btn"  %>
+        <%end %>
+
+        <% if can? :archive, @company %>
+          <%=link_to_archive @company %>
+        <% end %>
+      </div>
+    </div>
+    <div class="card card-show">
+      <h5 class="card-header my-card-header">Company Details</h5>
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-md-6 list-lbl">
+            Company Name
+          </div>
+          <div class="col-md-6 list-val"><%=@company.name %></div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6 list-lbl">Company Email</div>
+          <div class="col-md-6 list-val"><%=@company.email%></div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6 list-lbl">Phone Number</div>
+          <div class="col-md-6 list-val"><%= @company.phone_number %></div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6 list-lbl">Archived?</div>
+          <div class="col-md-6 list-val"><%=@company.archived?? "true" : "false" %></div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6 list-lbl">Website</div>
+          <div class="col-md-6 list-val"><%=link_to @company.website, @company.website%></div>
+        </div>
+
+      </div>
+    </div>
+    <%if @company.address.present? %>
+      <div class="card card-show">
+        <h5 class="card-header my-card-header">Address Information</h5>
+        <div class="card-body">
+            <div class="sales-representative">
+              <div class="row mb-4">
+                <div class="col-md-6 list-lbl">Address</div>
+                <div class="col-md-6 list-val"><%= @company.address.address_line_1 %></div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-6 list-lbl">City</div>
+                <div class="col-md-6 list-val"><%= @company.address.city %></div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-6 list-lbl">State/Province/Region</div>
+                <div class="col-md-6 list-val"><%= @company.address.state %></div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-6 list-lbl">ZIP/Postal Code</div>
+                <div class="col-md-6 list-val"><%= @company.address.postal_code %></div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-6 list-lbl">Country</div>
+                <div class="col-md-6 list-val"><%= @company.address.country.name %></div>
+              </div>
+            </div>
+        </div>
+      </div>
+    <%end %>
+    <%if @card_details.present? %>
+      <div class="card card-show">
+        <h5 class="card-header my-card-header">Card Details</h5>
+        <div class="card-body">
+          <div class="cards-info">
+            <div class="row mb-4">
+              <div class="col-md-6 list-lbl">Name on Card</div>
+              <div class="col-md-6 list-val"><%= @card_details.try :name %></div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md-6 list-lbl">Card Number</div>
+              <div class="col-md-6 list-val"><%= "**** **** **** #{@card_details.try :last4}" %></div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md-6 list-lbl">Valid Through</div>
+              <div class="col-md-6 list-val"><%= "#{@card_details.try :exp_month}/#{@card_details.try :exp_year}" %></div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <%=link_to  "Update Card",edit_card_admin_companies_path,remote:true, class:"btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%end %>
+    <div class="card card-show">
+      <h5 class="card-header my-card-header">Users</h5>
+      <div class="card-body">
+        <div class="product-docs">
+          <ul>
+            <%@company.users.each do |u| %>
+              <li><%=link_to u, admin_user_path(u) %> </li>
+            <%end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card card-show">
+      <h5 class="card-header my-card-header">Products</h5>
+      <div class="card-body">
+        <div class="product-docs">
+          <ul>
+            <%@company.products.each do |p| %>
+              <li><%=link_to p, admin_product_path(p) %> </li>
+            <%end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

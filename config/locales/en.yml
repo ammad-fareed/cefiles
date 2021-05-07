@@ -1,0 +1,263 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  app:
+    name: CE files
+
+  activerecord:
+    attributes:
+      user:
+        terms_label: <span>I accept the</span> <a href="%{url}" target="_blank">terms and conditions</a>
+        privacy_label: <span>I have read and understood the </span> <a href="%{policy_url}" target="_blank">privacy policy</a>
+        ce_updates_label: I agree to receive information via email regarding cefiles products and services.
+        can_represent_company: I am the official representative of this business, brand, and/or organisation and have permission to create this page.
+
+    errors:
+      models:
+        user:
+          attributes:
+            accepted_privacy:
+              blank: "must be accepted"
+
+    actions:
+      confirm: "Are you sure you want to archive?"
+  subscriptions:
+    plans:
+      title: "Pricing"
+  admin:
+    application:
+      navigation:
+        home: Home
+        user:
+          directives: Directives
+          companies: Companies
+          products: Products
+          standards: Standards
+          users: Users
+          enquiries: Enquiries
+    companies:
+      edit:
+        title: Edit Company
+      index:
+        add: New Company
+        title: Companies
+      new:
+        title: New Company
+      show:
+        users: Users
+        title: Company Profile
+        products: Products
+    documents:
+      new:
+        title: New Document
+      show:
+        title: Document Profile
+        revisions: Revisions
+        confirm_deletion: Are you sure you wish to delete this document? This cannot be undone.
+        back_to_product: Back to Product Profile
+      edit:
+        title: Edit Document
+    directives:
+      edit:
+        title: Edit Directive
+      index:
+        title: Directives
+        new: New Directive
+      new:
+        title: New Directive
+      show:
+        title: Directive Profile
+        standards: Standards
+      form:
+        details: Directive Details
+      per_product:
+        title: Directives
+        save: Save
+        close: Cancel
+    enquiries:
+      index:
+        title: Enquiries
+      show:
+        title: Enquiry Profile
+    pages:
+      dashboard:
+        title: Dashboard
+    products:
+      index:
+        title: Products
+        new: New Product
+      pending_approval:
+        title: Products Pending Approval
+      show:
+        title: Product Profile
+        details: Product Details
+        ce_details: CE Credentials
+        supplier: Sales Representation Details
+        manufacturer: Manufacturer Details
+        eu_representative: EU Representative
+        product_declaration: Product Declaration
+        no_image: No image provided
+        directives: Directives
+        no_directives: This product has no directives
+        documents: Documentation
+        no_documents: This product has no uploaded documentation.
+        share: Share URL
+        add_document: New Document
+      new:
+        title: New Product
+      edit:
+        title: Edit Product
+      countries:
+        title: EU Countries
+        save: Save
+        close: Cancel
+      form:
+        summary: Product Summary
+        details: Product Details
+        ce_details: CE Credentials
+        supplier: Sales Representation
+        manufacturer: Manufacturer Details
+        eu_representative: EU Representative
+        change_directives: Manage Directives
+        change_standards: Manage Standards
+        eu_countries: EU Countries
+        product_declaration: Product Declaration
+        existing_image: Existing Image
+    shared:
+      address:
+        title: Address
+    standards:
+      edit:
+        title: Edit Standard
+      index:
+        title: Standards
+        search: Search
+        new: New Standard
+      new:
+        title: New Standard
+      show:
+        title: Standard Profile
+        directives: Directives
+      form:
+        details: Standard Details
+        ce_categories: CE Categories
+      per_product:
+        title: Standards
+        save: Save
+        close: Close
+    users:
+      edit:
+        title: Edit User
+      index:
+        title: Users
+        new: New User
+        approvals: Pending Approvals
+      new:
+        title: New User
+      show:
+        title: User Profile
+      pending_approval:
+        title: Users Pending Approval
+      form:
+        details: User Details
+
+  application:
+    navigation:
+      dashboard: Dashboard
+      current_user: Signed in as %{name}
+      sign_in: Login
+      sign_out: Logout
+      sign_up: Register
+      home: Home
+      contact: Contact
+      resources: Resources
+
+  companies:
+    show:
+      title: Company Details
+      products: Products
+      no_products: This company has no products.
+
+  enquiries:
+    new:
+      title: Contact Us
+      description: Contact us by filling out the following enquiry form
+      message: Please send us your enquiry, by filling out the steps below. Thanks!
+    thanks:
+      title: Thank You
+      message: Thank you for sending us your thoughts on CE files. We'll get back to you as soon as we can.
+
+  errors:
+    messages:
+      blank: is required
+      accepted: must be accepted
+      over_size_limit: Documents for a product must be less than 500 megabytes
+      over_product_limit: You may only have %{limit} published products
+      extension_white_list_error: You are only allowed to upload %{allowed_types} files
+
+  layouts:
+    footer:
+      ce_mark: CE marking, which stands for Conformité Européenne / European Conformity marking, ensures the free movement of products within the European market that conform to European Union (EU) Directives. This marking is a key indicator of a product's compliance with EU regulations.
+      copyright: "&copy; Copyright Product Presence Limited. All Rights Reserved."
+      terms: Terms and Conditions
+      privacy: Privacy Policy
+      facebook: Facebook
+      twitter: Twitter
+
+  pages:
+    home:
+      title: Home
+    resources:
+      title: Resources
+    terms:
+      title: Terms and Conditions of Use
+    privacy:
+      title: Privacy Policy
+    eisa:
+      title: Standards
+    basic_search:
+      title: Search
+    literature:
+      title: Literature
+    certification_providers:
+      title: Certification Providers
+    cookie_policy:
+      title: Cookie Policy
+    subscription:
+      title: Pricing
+  products:
+    show:
+      title: Product Detail
+      back: Back
+      specifications: Technical Specifications
+      documentation: Documentation
+      directives: Applied Directives
+      standards: Standards Applied
+      supplier: Sales Representation
+      notes: Notes
+      manufacturer: Manufacturer
+      eu_representative: Technical Representative
+      more_directives: Load more directives ...
+      more_standard: Load more standards ...
+      more_documentation: Load more documentation ...
+    search:
+      title: Detailed Search
+      title_html: Products listed under <span class="ce-number">%{number}</span>
+  user:
+    display_name: "%{given_name} %{family_name}"
+    registrations:
+      create:
+        title: Register
+      new:
+        title: Register
+      edit:
+        title: Edit your profile
+        cancel:
+          title: Cancel my account
+          message_html: Unhappy? %{link}
+          link: Cancel my account
+          confirm: Are you sure?
+    confirmations:
+      new:
+        title: Resend confirmation instructions

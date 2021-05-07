@@ -1,0 +1,35 @@
+<div class="content-page-holder">
+  <div class="products-inner">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card card-show">
+          <h5 class="card-header my-card-header">Company Details</h5>
+          <div class="card-body">
+            <div class="row mb-3">
+              <div class="col-md-6 list-lbl">
+                Company Name
+              </div>
+              <div class="col-md-6 list-val"><%=@company.name %></div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md-6 list-lbl">Company Email</div>
+              <div class="col-md-6 list-val"><%=@company.email%></div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md-6 list-lbl">Phone Number</div>
+              <div class="col-md-6 list-val"><%= @company.phone_number %></div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md-6 list-lbl">Archived?</div>
+              <div class="col-md-6 list-val"><%=@company.archived?? "true" : "false" %></div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md-6 list-lbl">Website</div>
+              <div class="col-md-6 list-val"><%=link_to @company.website, @company.website%></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

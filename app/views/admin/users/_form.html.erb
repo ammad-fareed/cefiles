@@ -1,0 +1,52 @@
+<%= simple_form_for [:admin, @user] do |f| %>
+  <div class="products-row">
+    <h2>User Details</h2>
+    <div class="product-cols">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-rows">
+            <%=f.input :given_name,input_html:{class:"input-field"} %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-rows">
+            <%=f.input :family_name,input_html:{class:"input-field"} %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-rows">
+            <%=f.input :email,input_html:{class:"input-field"} %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-rows">
+            <%if current_user.admin? %>
+              <%=f.association :company,collection:Company.unarchived.pluck(:name,:id),input_html:{class:"input-field"} %>
+            <%else %>
+              <%=f.input :company,collection: [[current_user.company.name,current_user.company.id]],selected: current_user.company.id,input_html:{readonly: :true,class:"input-field"} %>
+            <%end %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-rows">
+            <%=f.input :password,input_html:{class:"input-field"} %>
+            <span class="passowrd-message">(leave blank if you don't want to change it)</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-rows">
+            <%=f.input :password_confirmation,input_html:{class:"input-field"} %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="form-rows">
+    <%=f.submit class:"submit-btn",data: { disable_with: 'Please wait...' } %>
+  </div>
+<%end %>

@@ -1,0 +1,26 @@
+<%= simple_form_for @enquiry,url:contact_path do |f| %>
+  <div class="products-row">
+    <div class="product-cols">
+      <div class="form-rows">
+        <%=f.input :name,input_html:{class:"input-field"} %>
+      </div>
+      <div class="form-rows">
+        <%=f.input :email,input_html:{class:"input-field"} %>
+      </div>
+      <div class="form-rows">
+        <%=f.input :content,as: :text,input_html:{class:"input-field"},label:"Message" %>
+      </div>
+      <div class="contact-recaptcha">
+        <%
+=begin%>
+ <%= recaptcha_tags %> 
+<%
+=end%>
+      </div>
+    </div>
+
+  </div>
+  <div class="form-rows">
+    <%=f.submit class:"submit-btn",data: { disable_with: 'Please wait...' } %>
+  </div>
+<%end %>

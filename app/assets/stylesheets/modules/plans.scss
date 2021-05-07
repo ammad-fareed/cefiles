@@ -1,0 +1,291 @@
+.subscription-container{
+  padding-top: 20px;
+  margin-bottom: 120px;
+}
+
+
+.panel-body
+{
+  padding: 0px;
+  text-align: center;
+}
+
+.the-price
+{
+  //background-color: rgba(220, 220, 220, 0.17);
+  //box-shadow: 0 1px 0 #dcdcdc, inset 0 1px 0 #fff;
+  padding: 30px;
+  margin: 0;
+  text-align: center;
+
+}
+.product-limit{
+  padding: 10px 15px;
+  background-color: whitesmoke;
+  border-top: 1px solid #dddddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.the-price h1
+{
+  line-height: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+.subscript
+{
+  font-size: 25px;
+  font-style: normal;
+}
+
+/* CSS-only ribbon styles    */
+.cnrflash
+{
+  /*Position correctly within container*/
+  position: absolute;
+  top: -9px;
+  right: 4px;
+  z-index: 1; /*Set overflow to hidden, to mask inner square*/
+  overflow: hidden; /*Set size and add subtle rounding  		to soften edges*/
+  width: 100px;
+  height: 100px;
+  border-radius: 3px 5px 3px 0;
+}
+.cnrflash-inner
+{
+  /*Set position, make larger then 			container and rotate 45 degrees*/
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 145px;
+  height: 145px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -o-transform: rotate(45deg); /* Opera */
+  -moz-transform: rotate(45deg); /* Firefox */
+  -webkit-transform: rotate(45deg); /* Safari and Chrome */
+  -webkit-transform-origin: 100% 100%; /*Purely decorative effects to add texture and stuff*/ /* Safari and Chrome */
+  -ms-transform-origin: 100% 100%;  /* IE 9 */
+  -o-transform-origin: 100% 100%; /* Opera */
+  -moz-transform-origin: 100% 100%; /* Firefox */
+  background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.1) 50%), linear-gradient(0deg, transparent 0%, rgba(1,1,1,.2) 50%);
+  background-size: 4px,auto, auto,auto;
+  background-color: #aa0101;
+  box-shadow: 0 3px 3px 0 rgba(1,1,1,.5), 0 1px 0 0 rgba(1,1,1,.5), inset 0 -1px 8px 0 rgba(255,255,255,.3), inset 0 -1px 0 0 rgba(255,255,255,.2);
+}
+.cnrflash-inner:before, .cnrflash-inner:after
+{
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: -16px;
+  width: 0;
+  height: 0;
+  border: 8px solid #800000;
+}
+.cnrflash-inner:before
+{
+  left: 1px;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+.cnrflash-inner:after
+{
+  right: 0;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+.cnrflash-label
+{
+  /*Make the label look nice*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding-bottom: 5px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(1,1,1,.8);
+  font-size: 0.95em;
+  font-weight: bold;
+  text-align: center;
+}
+.errors{
+  text-align: left;
+  color: #fa755a;
+}
+.payment-info{
+  //  border-top: 1px solid #e1e1e1;
+  //  border-bottom: 1px solid #e1e1e1;
+  margin-top: 15px;
+  padding-top: 12px;
+}
+.StripeElement{
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.24), inset 0 0 0 1px rgba(0, 0, 0, 0.16);
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+#card-elements{
+  label{
+    text-align: left;
+    margin-top: 5px;
+  }
+
+}
+.StripeElement--focus{
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+.StripeElement--invalid{
+  border-color: #fa755a;
+}
+.StripeElement--webkit-autofill{
+  background-color: #fefde5 !important;
+}
+.lbl-form{
+  text-align: left;
+}
+.field , #postal-code{
+  background: transparent;
+  font-weight: 300;
+  border: 0;
+  color: #31325F;
+  outline: none;
+  flex: 1;
+  padding-right: 10px;
+  padding-left: 10px;
+  cursor: text;
+}
+
+.field::-webkit-input-placeholder,#postal-code::-webkit-input-placeholder {
+  color: #CFD7E0;
+}
+
+.field::-moz-placeholder,#postal-code::-webkit-input-placeholder  {
+  color: #CFD7E0;
+}
+.card-group{
+  float: left;
+}
+.form-submit{
+  float: left;
+  margin: 10px 0 0 0;
+}
+#card-errors{
+  display: none;
+  margin-top: 10px;
+}
+.overlay {
+  background: blue;
+  bottom: 0;
+  content: '';
+  display: none;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+.outer{
+  //  padding-bottom: 40px;
+}
+.subscription-form-intake{
+  h3,h4{
+    font-family:"minion-pro", serif;
+    font-size: 20px;
+  }
+  margin-bottom: 10px;
+  .payment-info{
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-left: 135px;
+  }
+  .well-lg{
+    min-height: 490px;
+  }
+  #card-errors{
+    margin-bottom: 0px;
+  }
+}
+.plan-title{
+  text-align: center;
+  font-size: 17px;
+}
+
+.subscription-form-intake .panel-success,.subscription-form-intake .panel-primary{
+  margin-top: 12px;
+}
+.subscription-message{
+  padding: 5px;
+}
+.subscription-instructions{
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #636363;
+}
+
+ .plans-card-header {
+  height: 3rem;
+
+}
+ .plans-body{
+   h1{
+     border-bottom: none !important;
+   }
+   padding-bottom: 0px;
+   .action-btns{
+     text-align: center;
+     a:visited{
+       color: #fff;
+     }
+   }
+
+ }
+ .plans-list{
+   text-align: center;
+   li{
+     background-color: #F9F9F9;
+     p{
+       font-family: Arial;
+       color: #636363;
+       padding-bottom: 0px;
+     }
+   }
+   a{
+     margin: 8px;
+   }
+ }
+ .bg-plans-success{
+   background: #d6e9c6;
+   h3{
+     text-align: center;
+     font-size: 20px;
+     color: green;
+   }
+ }
+ .bg-plans-primary{
+  background: #428bca;
+   h3{
+     text-align: center;
+     font-size: 20px;
+     color: #fff;
+   }
+ }
+ .plans-card{
+   background-color: rgba(220, 220, 220, 0.17);
+   &:hover{
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4), 0 1px 5px rgba(130, 130, 130, 0.35);
+   }
+ }
+ .btn-register{
+   margin: 8px;
+   font-family: Arial;
+   font-size: 14px;
+
+ }

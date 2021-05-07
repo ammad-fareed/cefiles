@@ -1,0 +1,51 @@
+<div class="content-page-holder">
+  <div class="products-inner">
+    <div class="products-header">
+      <h1>Products</h1>
+      <div class="search-outer clearfix">
+        <%= search_form_for @q, url:admin_products_path do |f| %>
+          <%= f.search_field :name_or_company_name_cont,placeholder:"Search Product", class:"search-field" %>
+          <%=f.submit class:"search-btn"%>
+
+        <%end %>
+      </div>
+    </div>
+    <div class="tables-holder">
+      <div class="newproduct">
+        <%=link_to "New Product",new_admin_product_path,class:"submit-btn" %>
+      </div>
+      <div class="table-responsive-sm listing-tbl">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Published?</th>
+            <th scope="col"><%=sort_link(@q, :name, "Name") %></th>
+            <th scope="col"><%=sort_link(@q, :company_name, "Company Name") %></th>
+            <th scope="col"><%=sort_link(@q, :model_number, "Model Number") %></th>
+            <th scope="col"><%=sort_link(@q, :product_category_name, "Product Category") %></th>
+            <th scope="col"><%=sort_link(@q, :id, "CE Files Record Number") %></th>
+            <th scope="col">Public URL</th>
+            <th scope="col">Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <%@products.each do |p| %>
+            <tr>
+              <th scope="row"><%=p.published? ? (content_tag :span,"Published",class: 'true') : (content_tag :span,"Draft",class: 'false') %></th>
+              <td><%=link_to p.name,admin_product_path(p.id) %></td>
+              <td><%= p.company.name %></td>
+              <td><%=p.model_number %></td>
+              <td><%=p.product_category.name.titleize %></td>
+              <td><%=p.id %></td>
+              <td><%=p.published? ? product_url(p) : product_share_url(p) %></td>
+              <td><%=link_to "Edit", edit_admin_product_path(p) %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <%=paginate @products %>
+      </div>
+    </div>
+  </div>
+
+</div>

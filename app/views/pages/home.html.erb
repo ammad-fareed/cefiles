@@ -1,0 +1,19 @@
+<div class="files-content">
+  <p>CE { Captures Everything } files</p>
+  <p>Replace hard copy product documentation with a single web link to a product page (an e-label) containing supporting product files.</p>
+  <p>E-labeling reduces product unit costs, facilitates instant information sharing and updates, and reduces waste.</p>
+</div>
+
+<div class="search-holder">
+  <h2>Search for Products:</h2>
+  <%= search_form_for @q,url: basic_search_pages_path, class: 'search' do |f| %>
+  <div class="form-row">
+    <%= f.text_field  :company_name_or_name_or_model_number_cont,placeholder:"Search",class: 'input-field' %>
+    <%=f.submit "SUBMIT",class:"search-submit" %>
+  </div>
+  <%end %>
+  <div class="detail-search">
+    <%= link_to "Detailed Search",search_products_path %>
+  </div>
+
+</div>

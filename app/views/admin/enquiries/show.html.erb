@@ -1,0 +1,38 @@
+<div class="content-page-holder container">
+  <div class="products-inner">
+    <div class="products-header">
+      <h1>Enquiry Profile</h1>
+
+    </div>
+    <div class="card card-show">
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-md-6 list-lbl">
+            Created At
+          </div>
+          <div class="col-md-6 list-val"><%=format_date_time @enquiry.created_at %></div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6 list-lbl">
+            Name
+          </div>
+          <div class="col-md-6 list-val"><%=@enquiry.user.display_name %></div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6 list-lbl">
+            Email
+          </div>
+          <div class="col-md-6 list-val"><%=@enquiry.email %></div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6 list-lbl">
+            Message
+          </div>
+          <div class="col-md-6 list-val"><%=@enquiry.content %></div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<% if params[:hide_archived] == 'true' %>
+  <%=link_to "Show Archived", params.merge({hide_archived: false}).permit(:hide_archived),class:"submit-btn action-btn" %>
+<%else %>
+  <%= link_to "Hide Archived", params.merge({hide_archived: true}).permit(:hide_archived),class:"submit-btn action-btn" %>
+<%end %>

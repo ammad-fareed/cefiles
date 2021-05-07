@@ -1,0 +1,53 @@
+@import "partials/typography";
+.my-card-header{
+  color: $primary;
+  font-style: italic;
+  font-family: "minion-pro",Serif;
+}
+.prod-image{
+  width: 10rem;
+  height: 8rem;
+  border: #ddd solid 1px;
+  padding: 10px;
+}
+.card-show{
+  margin-bottom: 5rem;
+
+  .list-lbl{
+    font-weight: bold;
+    color: $lightGray
+  }
+  .list-val{
+    color: $lightGray;
+  }
+  a{
+    color: $lightGray;
+  }
+}
+
+.custom-textarea{
+  width: 440px;
+}
+a.link{
+  color: $primary;
+  text-decoration: underline;
+}
+.listing-tbl{
+  margin-bottom: 5rem;
+  table{
+    tbody tr td{
+      overflow-wrap: anywhere;
+    }
+  }
+}
+a.show-as-link{
+  color: #2eb5ab;
+  text-decoration: underline;
+}
+.qr-container{
+  display: none;
+}
+.action-btn{
+  font-family: Arial;
+  font-size: 13px;
+}

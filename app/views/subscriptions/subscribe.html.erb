@@ -1,0 +1,26 @@
+<div class="content-page-holder">
+  <div class="container subscribe-container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="plan-title">Your current selected plan</h3>
+          <div class="plan-holder selected-plan-holder <%=@plan.nickname=='Gold' && "gold"%>">
+            <div class="plans-header">
+              <h1><%=@plan.nickname%></h1>
+              <h2>$<%=@plan.amount/100%> <span>per month</span></h2>
+            </div>
+            <ul class="offers">
+              <li>Publish up to <%=@plan.nickname=='Silver'? "10" : "20"%> Products</li>
+            </ul>
+          </div>
+      </div>
+      <div class="col-md-8 subscription-form-intake">
+        <div class="card">
+          <div class="card-body">
+            <%= render "form"%>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

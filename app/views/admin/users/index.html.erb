@@ -1,0 +1,47 @@
+<div class="content-page-holder">
+  <div class="products-inner">
+    <div class="products-header">
+      <h1>Users</h1>
+      <div class="search-outer clearfix">
+        <%= search_form_for @q, url:admin_users_path do |f| %>
+          <%= f.search_field :full_name_cont,placeholder:"Search User", class:"search-field" %>
+          <%=f.submit class:"search-btn"%>
+        <%end %>
+      </div>
+    </div>
+    <div class="tables-holder">
+      <div class="newproduct">
+        <%= render "admin/users/archived_actions", locals:{params: params}  %>
+        <%if can? :create, User %>
+          <%=link_to "New User",new_admin_user_path,class:"submit-btn" %>
+        <%end %>
+
+
+      </div>
+      <div class="table-responsive-sm">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col"><%=sort_link(@q, :given_name, "Name") %></th>
+            <th scope="col"><%=sort_link(@q, :email, "Email") %></th>
+            <th scope="col"><%=sort_link(@q, :company_name, "Company") %></th>
+            <th scope="col">Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <%@users.each do |user| %>
+            <tr>
+              <td><%=link_to user.display_name,admin_user_path(user.id) %></td>
+              <td><%= user.email %></td>
+              <td><%=user.company %></td>
+              <td><%=link_to "Edit", edit_admin_user_path(user) %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <%=paginate @users %>
+      </div>
+    </div>
+  </div>
+
+</div>

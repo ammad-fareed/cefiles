@@ -1,0 +1,2 @@
+class CeCategory < ApplicationRecord
+end

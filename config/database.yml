@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: new_cefiles_development
+  pool: 5
+  username: postgres
+  password: 1234

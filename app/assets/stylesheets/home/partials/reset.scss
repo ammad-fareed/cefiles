@@ -1,0 +1,151 @@
+$black:#000;
+$white:#fff;
+$darkblue:#30343e;
+$lightGray: #e0e0e0;
+$gray:#615d5d;
+$green:#f1f1f1;
+$darkblue:#30343e;
+$blue:#0f91a0;
+$pumpkin: #ff8604;
+$files: #00a79d;
+$darkGray:#848484;
+
+$font: Arial, Helvetica, sans-serif;
+
+$light: normal;
+
+@mixin cover-background($cover) {
+    -webkit-background-size:$cover;
+    -moz-background-size:$cover;
+    -o-background-size:$cover;
+    background-size:$cover;
+}
+@mixin transitions($duration) {
+    -webkit-transition: all $duration;
+    transition: all $duration;
+}
+@mixin placeholder($color){
+    &::-webkit-input-placeholder {
+        color:$color;
+    }
+    &::-moz-placeholder {
+        color:$color;
+    }
+    &:-ms-input-placeholder {
+        color:$color;
+    }
+    &:-moz-placeholder {
+        color:$color;
+    }
+}
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+*{
+    margin:0px;
+    padding:0px;
+    outline:none;
+    line-height:normal;
+    font-family: $font;
+    font-weight: 400;
+}
+
+a{
+    text-decoration:none;
+    outline:none !important;
+    color:$gray;
+    &:hover{
+        text-decoration:none;
+    }
+    &:active{
+       text-decoration:none;
+    }
+    &:visited{
+       text-decoration:none;
+       color: inherit;
+    }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-weight: normal;
+    padding:0 0 10px;
+    margin:0px;
+    line-height:normal;
+}
+p{
+  line-height: normal;
+  padding: 0 0 10px;
+  margin:0px;
+  color:#000000;
+  font-size:14px;
+}
+// clearing floats //
+.clearfix:after {
+  content: "&nbsp;";
+  font-size: 0;
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.clearfix {
+  display: inline-block; }
+
+.clearfix {
+  display: block; }
+
+* html .clearfix {
+  height: 1%; }
+
+.clear {
+  clear: both; }
+ul{
+    display:block;
+    margin:0px;
+    padding:0px;
+    li{
+        list-style-type:none;
+    }
+}
+.success{
+    font-size:14px;
+    font-weight:700;
+    padding:0 0 10px;
+    color:#66ae00;
+}
+.text-field {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 7px 10px;
+  border: 0px;
+  background: $white;
+  @include placeholder($gray);
+}
+.mobile {
+    display: block !important;
+    @include tablet {
+        display: none !important;
+    }
+}
+.desktop {
+    display: none !important;
+    @include tablet {
+        display: block !important;
+    }
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+
+

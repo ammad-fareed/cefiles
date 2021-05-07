@@ -1,0 +1,26 @@
+<div class="header-holder homepage clearfix">
+  <div class="menu-btn">
+    <div class="navi-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="logo">
+    <%=link_to root_path do %><%= image_tag "logo.svg" , alt: "CE-Files-logo"%><%end %>
+  </div>
+  <div class="navigation-holder">
+    <ul class="navigation">
+      <%if current_user.present? %>
+        <li><%=link_to "Dashboard",admin_root_path %></li>
+        <li><%=link_to "Logout",destroy_user_session_path, method: :delete %></li>
+      <%else %>
+        <li><%=link_to "Register",plans_path %></li>
+        <li><%=link_to "Login" , new_user_session_path %></li>
+      <%end %>
+      <li><%=link_to "Add a Product",admin_products_path %></li>
+      <li><%=link_to "Contact",contact_path %></li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+body {
+  border-top: 5px solid $files;
+}
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+.main-content {
+	min-height:100%;
+   position:relative;
+}
+.body-content {
+	padding: 0 15px;
+	padding-bottom: 221px;
+	@include tablet {
+		padding-bottom: 207px;
+	}
+}
+.header-holder {
+  &.homepage {
+    padding: 20px 15px 0;
+    & .logo {
+      float: left;
+      width: 150px;
+      img {
+        max-width: 100%;
+      }
+    }
+    & .navigation-holder {
+      position: absolute;
+      left: 0;
+      top: 80px;
+      width: 100%;
+      display: none;
+    }
+    @include tablet {
+      padding: 70px 15px 0;
+      & .logo {
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+        width: 205px;
+        padding: 0 0 70px;
+        img {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+      & .navigation-holder {
+        position: initial;
+        left: initial;
+        top: initial;
+        width: initial;
+        display: block;
+      }
+    }
+  }
+}
+ul.navigation {
+  margin: 0;
+  padding: 30px 0px;
+  li {
+    display: block;
+    a {
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+      display: block;
+      padding: 12px 15px;
+      background: $white;
+      font-family: $font;
+      color: $darkGray;
+			border-bottom: 1px solid $darkGray;
+			transition: all 0.5s;
+			&:hover {
+				background: $black;
+				color: $white;
+			}
+    }
+  }
+  li:first-child {
+    border-top: 1px solid $darkGray;
+  }
+  @include tablet {
+    padding: 0;
+    text-align: center;
+    li {
+      display: inline-block;
+      a {
+        background: none;
+        color: $gray;
+        padding: 10px 15px;
+        font-size: 13px;
+        font-weight: bold;
+        border: none;
+        border: 1px solid $white;
+        &:hover {
+          color: $files;
+          -webkit-border-top-left-radius: 15px;
+          -webkit-border-bottom-right-radius: 15px;
+          -moz-border-radius-topleft: 15px;
+          -moz-border-radius-bottomright: 15px;
+          border-top-left-radius: 15px;
+					border-bottom-right-radius: 15px;
+					border: 1px solid $files;
+					background: none;
+        }
+      }
+    }
+  }
+}

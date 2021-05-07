@@ -1,0 +1,125 @@
+<div class="content-page-holder container">
+  <div class="products-inner">
+    <div class="products-header">
+      <h1>Product Profile</h1>
+        <div class="action-btns-group">
+          <%=link_to "Edit",edit_admin_product_path(@product),class:"btn btn-primary" %>
+          <% if @product.published? %>
+            <%= link_to t('activerecord.actions.show_public'), product_path(@product), target: '_blank',class:"btn btn-primary" %>
+          <%else %>
+            <%=link_to t('.share'), product_share_url(@product), id: 'share-link', target: '_blank',class:"btn btn-primary" %>
+          <%end %>
+        </div>
+    </div>
+    <div class="card card-show">
+      <h5 class="card-header my-card-header">Product Details</h5>
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-md-6 list-lbl">
+            Name
+          </div>
+          <div class="col-md-6 list-val"><%=@product.name %></div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6 list-lbl">Company Name</div>
+          <div class="col-md-6 list-val"><%=link_to @product.company, admin_company_path(@product.company), class:"show-as-link"%></div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6 list-lbl">Model Number</div>
+          <div class="col-md-6 list-val"><%= @product.model_number %></div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6 list-lbl">Product Category</div>
+          <div class="col-md-6 list-val"><%=@product.product_category.name.titleize %></div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-md-6 list-lbl">Image</div>
+          <div class="col-md-6 list-val">
+            <%if @product.image.present? %>
+            <%= image_tag @product.image.url,class:"prod-image" %>
+            <%else %>
+              No Image Provided
+            <%end %>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6 list-lbl">Description</div>
+          <div class="col-md-6 list-val"><%=@product.description %></div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6 list-lbl">Notes</div>
+          <div class="col-md-6 list-val"><%=@product.notes %></div>
+        </div>
+      </div>
+    </div>
+    <%if @product.all_suppliers.present? %>
+      <div class="card card-show">
+        <h5 class="card-header my-card-header">Sales Representation</h5>
+        <div class="card-body">
+          <%@product.all_suppliers.each do |s| %>
+            <div class="sales-representative">
+              <div class="row mb-4">
+                <div class="col-md-6 list-lbl">
+                  Name
+                </div>
+                <div class="col-md-6 list-val"><%= s.name %></div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-6 list-lbl">Email</div>
+                <div class="col-md-6 list-val"><%=s.email %></div>
+              </div>
+              <%if s.phone.present? %>
+                <div class="row mb-4">
+                  <div class="col-md-6 list-lbl">Phone</div>
+                  <div class="col-md-6 list-val"><%= s.phone %></div>
+                </div>
+              <%end %>
+              <div class="row mb-4">
+                <div class="col-md-6 list-lbl">Address</div>
+                <div class="col-md-6 list-val"><%= s.address.address_line_1 %></div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-6 list-lbl">City</div>
+                <div class="col-md-6 list-val"><%= s.address.city %></div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-6 list-lbl">State/Province/Region</div>
+                <div class="col-md-6 list-val"><%= s.address.state %></div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-6 list-lbl">ZIP/Postal Code</div>
+                <div class="col-md-6 list-val"><%= s.address.postal_code %></div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-6 list-lbl">Country</div>
+                <div class="col-md-6 list-val"><%= s.address.country.name %></div>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    <%end %>
+
+    <div class="card card-show">
+      <h5 class="card-header my-card-header">Documentation</h5>
+      <div class="card-body">
+        <%if can? :create, Document %>
+          <%=link_to "New Document",new_admin_product_document_path(@product),class:"btn btn-primary sized-btn" %>
+        <%end%>
+        <div class="product-docs">
+          <%if @product.documents.empty? %>
+            <p><%=t('.no_documents') %></p>
+          <%else %>
+            <ul>
+              <%@product.documents.each do |document| %>
+                <li><%=link_to document.title, admin_document_path(document) %>  <%="- #{document.description}" if document.description.present? %></li>
+              <%end %>
+            </ul>
+          <%end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+  <% if @products.present? %>
+    <div class="tables-holder row  align-items-center justify-content-center product-search-listing">
+      <div class="table-responsive-sm col-md-6">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col"><%=sort_link(@q, :name, "Name") %></th>
+            <th scope="col"><%=sort_link(@q, :id, "Cefiles Record Number") %></th>
+            <th scope="col"><%=sort_link(@q, :model_number, "Model Number") %></th>
+            <th scope="col"><%=sort_link(@q, :product_company_name, "Company Name") %></th>
+
+          </tr>
+          </thead>
+          <tbody>
+          <%@products.each do |p| %>
+            <tr>
+              <td><%=link_to p.name,product_path(p.id) %></td>
+              <td><%= p.id %></td>
+              <td><%=p.model_number %></td>
+              <td><%=p.company.name.titleize %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <%=paginate @products %>
+      </div>
+    </div>
+  <%else %>
+    <div class="row align-items-center justify-content-center">
+      <%if request.query_string.present? %>
+        <div class="col-md-6">
+          <p>Your search has no results</p>
+          <%=link_to "Back", "#" , class:'link-as-btn',onClick:'history.go(-1);return false;' %>
+        </div>
+      <%end %>
+
+    </div>
+  <%end %>
