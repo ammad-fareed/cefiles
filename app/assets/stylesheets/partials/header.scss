@@ -80,16 +80,16 @@ ul.navigation {
       background: $white;
       font-family: $font;
       color: $garaynew;
-			border-bottom: 1px solid $lightGray;
-			transition: all 0.5s;
-			&:hover {
-				background: $black;
-				color: $white;
-			}
+      border-bottom: 1px solid $lightGray;
+      transition: all 0.5s;
+      &:hover {
+        background: $black;
+        color: $white;
+      }
     }
   }
   li:first-child {
-    border-top: 1px solid $lightGray;
+    //border-top: 1px solid $lightGray;
   }
   @include tablet {
     padding: 0;
