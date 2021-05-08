@@ -1,11 +1,15 @@
-<div class="content-page-holder">
+<div class="content-page-holder" style="padding-top:0px">
   <div class="products-inner">
-    <div class="products-header">
+    <div class="products-header standard">
       <h1>Companies</h1>
       <div class="search-outer clearfix">
         <%= search_form_for@q, url:admin_companies_path do |f| %>
-          <%= f.search_field :name_cont,placeholder:"Search Company", class:"search-field" %>
-          <%=f.submit class:"search-btn action-btn"%>
+          <div class="row">
+          <div class="col col-lg-6 col-sm-12">
+            <%= f.search_field :name_cont,placeholder:"Search Company", class:"search-field" %>
+            <%=f.submit class:"search-btn action-btn"%>
+          </div>
+          </div>
         <%end %>
       </div>
     </div>

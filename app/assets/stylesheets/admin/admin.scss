@@ -12,3 +12,10 @@
 @import "modules/subscriptions";
 @import "modules/overlay_loader";
 @import "partials/overrides";
+
+
+.standard h1 {
+  font-size: 36px;
+    margin-top: 12px;
+    padding: 20px 20px;
+}
