@@ -15,6 +15,10 @@
 @import "modules/custom_responsive";
 
 
+.header-holder.accountpage {
+    padding: 40px 0px;
+}
+
 .login-btn{
   color: #fff !important;
     font-weight: 500 !important;
@@ -32,6 +36,9 @@
 	font-size:28px;
 }
 @media screen and (max-width: 480px) {
+.header-holder.accountpage {
+    padding:14px;
+}
   .register-btn{
 	text-align:left;
 }
