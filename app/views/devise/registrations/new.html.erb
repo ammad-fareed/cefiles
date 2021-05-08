@@ -1,24 +1,46 @@
 <div class="content-page-holder">
-  <div class="container">
-    <h1>Register</h1>
+  <div class="login">
+    <h1 class="login-sec">Register</h1>
     <div class="form-holder">
       <%=simple_form_for resource, as: resource_name, method: :post, url: registration_path(resource_name),html: {id: "new-registration"} do |f| %>
-        <div class="form-rows">
-          <%=f.input :email,label:"Email",input_html: {class: "input-field"} %>
+        <div class="row">
+        <div class="col col-lg-6 col-sm-12">
+          <div class="form-rows">
+            <%=f.input :email,label:"Email",input_html: {class: "input-field"} %>
+          </div>
         </div>
+        </div>
+        <div class="row">
+        <div class="col col-lg-6 col-sm-12">
         <div class="form-rows">
           <%=f.input :password,label:"Password",input_html: {class: "input-field"} %>
           <span class="msg">Min 6 digits with atleast 1 special character</span>
         </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col col-lg-6 col-sm-12">
         <div class="form-rows">
           <%=f.input :password_confirmation,label:"Password Confirmation",input_html: {class: "input-field"} %>
         </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col col-lg-6 col-sm-12">
         <div class="form-rows">
           <%=f.input :given_name,label:"First Name",error:"First name is required",input_html: {class: "input-field"} %>
         </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col col-lg-6 col-sm-12">
         <div class="form-rows">
           <%=f.input :family_name,label:"Last Name",error:"Last name is required",input_html: {class: "input-field"} %>
         </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col col-lg-12 col-sm-12">
         <div class="form-rows">
           <%=f.input :terms_and_conditions,as: :boolean,error:"Must be accepted",input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"},label:t('activerecord.attributes.user.terms_label', url: terms_path).html_safe  %>
         <div class="form-rows">
@@ -27,29 +49,52 @@
         <div class="form-rows">
           <%=f.input :should_receive_ce_updates,as: :boolean,input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"},label:t('activerecord.attributes.user.ce_updates_label')  %>
         </div>
+
         <div class="company-section">
           <%=f.simple_fields_for :company do |ff| %>
+            <div class="row">
+            <div class="col col-lg-6 col-sm-12">
             <div class="form-rows">
               <%=ff.input :name, label:"Company Legal Name",input_html:{class:"input-field"} %>
             </div>
-            <div class="form-rows">
-              <%= ff.input :industry_id,as: :select, input_html:{class:"custom-select mb-3"}, collection:Industry.pluck(:name,:id),required:true %>
             </div>
+            </div>
+            <div class="row">
+            <div class="col col-lg-6 col-sm-12">
+            <div class="form-rows">
+              <%= ff.input :industry_id,as: :select, input_html:{class:"custom-select"}, collection:Industry.pluck(:name,:id),required:true %>
+            </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col col-lg-6 col-sm-12">
+            <div class="form-rows">
+            <%=ff.input :name, label:"Company Email",input_html:{class:"input-field"} %>
+          </div>
+          </div>
+          </div>
 
-            <%= ff.input :selected_plan_id,as: :hidden,input_html:{value:@plan_id || session[:plan_id]}%>
+          <%= ff.input :selected_plan_id,as: :hidden,input_html:{value:@plan_id || session[:plan_id]}%>
             <%= render "admin/shared/address",ff:ff,required:true %>
           <%end %>
-            <div class="form-rows">
-              <%= f.input :can_represent_company, as: :boolean, input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"},required:true, label: t('activerecord.attributes.user.can_represent_company').html_safe %>
+            <div class="row">         
+            <div class="col col-lg-12 col-sm-12">
+                <div class="form-rows">
+                  <%= f.input :can_represent_company, as: :boolean, input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"},required:true, label: t('activerecord.attributes.user.can_represent_company').html_safe %>
+                </div>
+              </div>
             </div>
-            <%=recaptcha_tags %>
-        </div>
+        <div class="row">
+        <div class="col col-lg-12 col-sm-12">
         <div class="submit-row">
           <%= f.submit value:"Sign Up", label: :registration_create,class:"submit-btn", data: { disable_with: 'Signing Up...' }  %>
         </div>
       <%end %>
-      <div class="links-row">
-        <%= render "devise/shared/links" %>
+      <div class=" links-row  right">
+      <%= render "devise/shared/links" %>
+      </div>
+      </div>
+            
       </div>
     </div>
   </div>

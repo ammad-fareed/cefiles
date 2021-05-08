@@ -53,6 +53,23 @@
     }
 
 }
+.form-group{
+  margin-bottom: 1rem !important;
+}
+form label {
+  display: block;
+  vertical-align: top;
+  line-height: 1.25;
+  padding: 0 0 5px 0;
+}
+
+form label, form input, form select, form textarea {
+  //display: inline-block;
+  font-size: 13px;
+  color: #848484;
+  font-family: "Helvetica Neue","Arial",Sans-serif;
+}
+
 .product-search{
   .form-group{
     margin-bottom: 0rem !important;
