@@ -11,8 +11,9 @@
     </div>
     <div class="tables-holder">
       <div class="newproduct">
+      <%= render "admin/companies/archive_companies" %>
         <%=link_to "New Company",new_admin_company_path,class:"submit-btn action-btn" %>
-        <%= render "admin/companies/archive_companies" %>
+        
       </div>
       <div class="table-responsive-sm">
         <table class="table">
