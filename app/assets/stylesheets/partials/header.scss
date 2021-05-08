@@ -43,6 +43,13 @@ body {
         width: 100%;
         display: none;
         z-index: 7;
+        ul{
+          .first-tab{
+            a{
+              margin: 2px;
+            }
+          }
+        }
         .current-user{
           color: #a0a2a2;
         }
