@@ -1,4 +1,4 @@
-<div class="header-holder accountpage productspage clearfix">
+<div class="header-holder dashboard-header accountpage productspage clearfix">
   <div class="menu-btn">
     <div class="navi-icon">
       <span></span>
@@ -16,12 +16,12 @@
       <li><%= link_to "Subscriptions",plans_path if current_user.admin? %></li>
       <li><%= link_to "Companies",admin_companies_path(hide_archived:true) if current_user.admin? %></li>
       <li><%= link_to "Users",admin_users_path if current_user.admin?%></li>
-      <li><%= link_to current_user.company, admin_company_path(current_user.company) unless current_user.admin? %></li>
+
       <li><%= link_to "Products",admin_products_path %></li>
       <li><%= link_to "Enquiries",admin_enquiries_path if current_user.admin? %></li>
 
       <li class="current-user"><%="Signed in as #{current_user.display_name}"%> </li>
-      <li><%=link_to "Logout", destroy_user_session_path, :method => 'delete' %></li>
+      <li class="logout-tab"><%=link_to "Logout", destroy_user_session_path, :method => 'delete' %></li>
     </ul>
   </div>
 </div>

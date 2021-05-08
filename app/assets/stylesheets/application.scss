@@ -106,6 +106,30 @@
 }
 }
 
+
+.main-content{
+    .dashboard-header{
+        padding: 10px;
+        display: block;
+        position: relative;
+        height: auto;
+        min-height: 60px;
+        overflow: hidden;
+        background: grey;
+        .menu-btn {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            background: transparent;
+            padding: 7px;
+            border-radius: 5px;
+            display: block !important;
+            z-index: 12;
+        }
+    }
+}
+
+
 .form-rows .input-field {
     width: 100%;
     background: #fff;

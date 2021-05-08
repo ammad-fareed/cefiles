@@ -11,6 +11,74 @@ body {
   padding:0;
   height:100%;
 }
+@media only screen and (max-width: 768px){
+  .main-content{
+    .body-content{
+    .dashboard-header{
+        padding: 10px;
+        display: block;
+        height: auto;
+        min-height: 50px;
+        overflow: hidden;
+        background: #606262;
+        .menu-btn {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            background: transparent;
+            padding: 7px;
+            border-radius: 5px;
+            display: block !important;
+            z-index: 12;
+        }
+        .logo {
+          float: left;
+          width: 100px;
+      }
+      .navigation-holder {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        width: 100%;
+        display: none;
+        z-index: 7;
+        .current-user{
+          color: #a0a2a2;
+        }
+        .logout-tab{
+          background: #2eb5ab !important;
+          color: #fff !important;
+          a{
+            background: #2eb5ab image-url("right-.png") 95% center no-repeat !important;
+          }
+        }
+        ul.navigation li{
+          
+          padding: 16px;
+          background: #606262 ;
+          border-bottom: 1px solid #797c7c;
+          
+        }
+        ul.navigation li a {
+          text-align: left;
+          font-size: 13px;
+          display: block;
+          background: #606262 image-url("right-.png") 95% center no-repeat ;
+          padding: 0px;
+          font-family: Arial, Helvetica, sans-serif;
+          color: #fff;
+          border-bottom: none;
+          transition: all 0.5s;
+      }
+    }
+    }
+    
+  }
+  }
+  }
+
+
+
 .main-content {
   min-height:100%;
   position:relative;
