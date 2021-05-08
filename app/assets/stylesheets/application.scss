@@ -60,6 +60,12 @@
 
 
 @media screen and (max-width: 764px) {
+.register-btn{
+    a{
+    display:block;
+    margin-top:10px;
+    }
+}
 
 .dropdown-element{
     padding: 70px 0px !important;
