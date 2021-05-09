@@ -18,7 +18,7 @@
       <%end %>
       <li><%= link_to "Contact",contact_path %></li>
       <%if current_user %>
-        <li><%=link_to "Logout",destroy_user_session_path, method: :delete,class:"active" %></li>
+        <li><%=link_to "Logout",destroy_user_session_path, method: :delete,class:"active logout-btn" %></li>
       <%else %>
         <li><%=link_to "Register",plans_path %></li>
         <li><%=link_to "Login" , new_user_session_path ,:class => 'login-btn'%></li>

@@ -182,13 +182,14 @@ ul.navigation {
         border: none;
         border: 1px solid $white;
         &:hover {
-          width: 89px;
+          //width: 89px;
           text-align: left;
-          height: 36px;
-          background: #238695 image-url("right-.png") 95% center no-repeat !important;
+          //height: 36px;
+          background: transparent;
           text-align: left;
           border-radius: 5px;
-          color: #fff;
+          color: #00a79d;
+          padding: 10px 15px;
         }
         &.active {
           width: 89px;
@@ -202,4 +203,93 @@ ul.navigation {
       }
     }
   }
+}
+a:hover{
+  text-decoration: none !important;
+}
+
+
+ul.navigation {
+  margin: 0;
+  padding: 30px 0px 19px 0px;
+  @include tablet {
+    padding: 0;
+    text-align: center;
+    li {
+      display: inline-block;
+      .login-btn {
+        background: none;
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 13px;
+        font-weight: bold;
+        border: none;
+        border: 1px solid $white;
+        &:hover {
+          width: 89px;
+          text-align: left;
+          height: 36px;
+          background: #238695 image-url("right-.png") 95% center no-repeat !important;
+          text-align: left;
+          border-radius: 5px;
+          color: #00a79d;
+          padding: 10px 15px;
+          color: white;
+        }
+        &.active {
+          width: 89px;
+          text-align: left;
+          height: 36px;
+          background: #00a79d image-url("right-.png") 95% center no-repeat !important;
+          text-align: left;
+          border-radius: 5px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.header-holder{
+ul.navigation {
+  margin: 0;
+  padding: 30px 0px 19px 0px;
+  @include tablet {
+    padding: 0;
+    text-align: center;
+    li {
+      display: inline-block;
+      .logout-btn {
+        background: none;
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 13px;
+        font-weight: bold;
+        border: none;
+        border: 1px solid $white;
+        &:hover {
+          width: 89px;
+          text-align: left;
+          height: 36px;
+          background: #238695 image-url("right-.png") 95% center no-repeat !important;
+          text-align: left;
+          border-radius: 5px;
+          color: #00a79d;
+          padding: 10px 15px;
+          color: white;
+        }
+        &.active {
+          width: 89px;
+          text-align: left;
+          height: 36px;
+          background: #00a79d image-url("right-.png") 95% center no-repeat !important;
+          text-align: left;
+          border-radius: 5px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
 }
