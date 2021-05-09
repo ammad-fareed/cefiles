@@ -38,21 +38,21 @@ a:hover{
     text-decoration: none !important;
 }
 
-.dropdown-element{
-    bottom: 35px;
-    position: absolute;
-    right: 0px;
-    .login-btn{
-  color: #fff;
-    font-weight: 500;
-    width: 89px ;
-    height: 36px;
-    background: #00a79d image-url("right-.png") 95% center no-repeat !important;
-    text-align: left;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-}
-}
+// .dropdown-element{
+//     bottom: 35px;
+//     position: absolute;
+//     right: 0px;
+//     .login-btn{
+//   color: #fff;
+//     font-weight: 500;
+//     width: 89px ;
+//     height: 36px;
+//     background: #00a79d image-url("right-.png") 95% center no-repeat !important;
+//     text-align: left;
+//     -o-border-radius: 5px;
+//     border-radius: 5px;
+// }
+// }
 
 @media screen and (min-width: 768px) and (max-width: 1080px) {
     .login{
@@ -84,7 +84,7 @@ a:hover{
     padding: 12px 15px;
     background: #fff;
     font-family: Arial, Helvetica, sans-serif;
-    color: #afaeae;
+    color:#848484;
     border-bottom: 1px solid #e0e0e0;
     transition: all 0.5s;
 }
