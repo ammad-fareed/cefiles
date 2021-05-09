@@ -6,20 +6,40 @@
     <span class="cat-prod-count"></span>
     <div class="clear"></div>
     <div class="full-search-products">
+    <div class="row">
+    <div class="col col-lg-12 col-sm-12">
       <div class="form-rows">
         <%= f.input  :name_cont,placeholder:"Product Name",label:false,input_html: {class: 'input-field'} %>
       </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col col-lg-12 col-sm-12">
       <div class="form-rows">
         <%= f.input  :model_number_cont,placeholder:'Model Number',label: false,input_html: {class: 'input-field'} %>
       </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col col-lg-12 col-sm-12">
       <div class="form-rows">
         <%= f.input  :description_cont,placeholder:'Product Description',label:false,input_html: {class: 'input-field'} %>
       </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col col-lg-12 col-sm-12">
       <div class="form-rows">
         <%= f.input  :company_name_cont,placeholder:'Company Name',label:false, input_html: {class: 'input-field'} %>
       </div>
     </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col col-lg-12 col-sm-12">
     <%= f.submit "Search", class: 'btn btn-primary' %>
     <% #= link_to "Advanced Search" , '#',class:"prod-search" %>
+    </div>
+    </div>
   </div>
 <% end %>
