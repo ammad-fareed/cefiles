@@ -1,16 +1,20 @@
-<div class="content-page-holder">
+<div class="content-page-holder" style="padding-top:0px">
   <div class="products-inner">
-    <div class="products-header">
+    <div class="products-header standard">
       <h1>Users</h1>
       <div class="search-outer clearfix">
         <%= search_form_for @q, url:admin_users_path do |f| %>
+          <div class="row">
+          <div class="col col-lg-12 col-sm-12">
           <%= f.search_field :full_name_cont,placeholder:"Search User", class:"search-field" %>
           <%=f.submit class:"search-btn"%>
+          </div>
+          </div>
         <%end %>
       </div>
     </div>
     <div class="tables-holder">
-      <div class="newproduct">
+      <div style="padding:0 0 15px">
         <%= render "admin/users/archived_actions", locals:{params: params}  %>
         <%if can? :create, User %>
           <%=link_to "New User",new_admin_user_path,class:"submit-btn" %>

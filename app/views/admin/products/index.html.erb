@@ -1,17 +1,20 @@
-<div class="content-page-holder">
+<div class="content-page-holder" style="padding-top:0px">
   <div class="products-inner">
-    <div class="products-header">
+    <div class="products-header standard">
       <h1>Products</h1>
       <div class="search-outer clearfix">
         <%= search_form_for @q, url:admin_products_path do |f| %>
+          <div class="row">
+          <div class="col col-lg-12 col-sm-12">
           <%= f.search_field :name_or_company_name_cont,placeholder:"Search Product", class:"search-field" %>
           <%=f.submit class:"search-btn"%>
-
+          </div>
+          </div>
         <%end %>
       </div>
     </div>
     <div class="tables-holder">
-      <div class="newproduct">
+      <div style="padding:0 0 15px">
         <%=link_to "New Product",new_admin_product_path,class:"submit-btn" %>
       </div>
       <div class="table-responsive-sm listing-tbl">
