@@ -182,26 +182,22 @@ ul.navigation {
         border: none;
         border: 1px solid $white;
         &:hover {
-          color: $files;
-          -webkit-border-top-left-radius: 15px;
-          -webkit-border-bottom-right-radius: 15px;
-          -moz-border-radius-topleft: 15px;
-          -moz-border-radius-bottomright: 15px;
-          border-top-left-radius: 15px;
-          border-bottom-right-radius: 15px;
-          border: 1px solid $files;
-          background: none;
+          width: 89px;
+          text-align: left;
+          height: 36px;
+          background: #238695 image-url("right-.png") 95% center no-repeat !important;
+          text-align: left;
+          border-radius: 5px;
+          color: #fff;
         }
         &.active {
-          color: $white;
-          -webkit-border-top-left-radius: 15px;
-          -webkit-border-bottom-right-radius: 15px;
-          -moz-border-radius-topleft: 15px;
-          -moz-border-radius-bottomright: 15px;
-          border-top-left-radius: 15px;
-          border-bottom-right-radius: 15px;
-          border: 1px solid $files;
-          background: $files;
+          width: 89px;
+          text-align: left;
+          height: 36px;
+          background: #00a79d image-url("right-.png") 95% center no-repeat !important;
+          text-align: left;
+          border-radius: 5px;
+          color: #fff;
         }
       }
     }
