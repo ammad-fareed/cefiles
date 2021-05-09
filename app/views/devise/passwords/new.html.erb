@@ -1,15 +1,23 @@
 
 <div class="content-page-holder reset-password">
-  <div class="container">
+  <div class="container login">
     <h1>Forgot your password?</h1>
-    <div class="form-holder">
+    <div class="mt-4">
       <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name),html: { method: :post }) do |f| %>
         <%#= render "devise/shared/error_messages", resource: resource %>
+        <div class="row">
+        <div class="col col-lg-6 col-sm-12">
         <div class="form-rows">
           <%=f.input :email,autofocus: true, autocomplete: "email" , label:"Email",input_html:{class:"input-field"} %>
         </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col col-lg-12 col-sm-12">
         <div class="submit-row">
           <%=f.submit value:"Send me reset password instructions",class:"submit-btn",data:{disable_with:"Sending..."} %>
+        </div>
+        </div>
         </div>
       <%end %>
       <div class="links-row">

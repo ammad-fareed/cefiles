@@ -40,10 +40,14 @@
       </div>
       <%#f.object.address || f.object.build_address %>
       <%= render "admin/shared/address", ff:f %>
+      <div class="row">
+      <div class="col-md-12 right" style="text-align:right;">
+      <div class="form-rows">
+        <%=f.submit class:"submit-btn right",data: { disable_with: 'Please wait...' } %>
+      </div>
+      </div>
+      </div>
     </div>
   </div>
 
-  <div class="form-rows">
-    <%=f.submit class:"submit-btn",data: { disable_with: 'Please wait...' } %>
-  </div>
 <%end %>
