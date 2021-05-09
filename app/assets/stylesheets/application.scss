@@ -38,21 +38,21 @@ a:hover{
     text-decoration: none !important;
 }
 
-// .dropdown-element{
-//     bottom: 35px;
-//     position: absolute;
-//     right: 0px;
-//     .login-btn{
-//   color: #fff;
-//     font-weight: 500;
-//     width: 89px ;
-//     height: 36px;
-//     background: #00a79d image-url("right-.png") 95% center no-repeat !important;
-//     text-align: left;
-//     -o-border-radius: 5px;
-//     border-radius: 5px;
-// }
-// }
+.dropdown-element{
+    bottom: 35px;
+    position: absolute;
+    right: 0px;
+    .login-btn{
+  color: #fff;
+    font-weight: 500;
+    width: 89px ;
+    height: 36px;
+    background: #00a79d image-url("right-.png") 95% center no-repeat !important;
+    text-align: left;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+}
 
 @media screen and (min-width: 768px) and (max-width: 1080px) {
     .login{
@@ -64,6 +64,22 @@ a:hover{
 
 
 @media screen and (max-width: 764px) {
+
+    .dropdown-element{
+        bottom: 35px;
+        position: absolute;
+        right: 0px;
+        .login-btn{
+      color: #848484;
+        font-weight: 500;
+        width: 89px ;
+        height: 36px;
+        background: transparent !important;
+        text-align: left;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+    }
+    }
 .register-btn{
     a{
     display:block;

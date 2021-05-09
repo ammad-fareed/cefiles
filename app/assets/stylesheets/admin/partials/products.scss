@@ -67,6 +67,11 @@ body.products {
     padding: 0 40px;
   }
 }
+.products-box{
+  .row{
+    display: contents;
+  }
+}
 .products-header {
   max-width: 390px;
   margin: 0 0 30px;
