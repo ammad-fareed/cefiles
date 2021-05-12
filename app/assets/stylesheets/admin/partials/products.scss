@@ -86,6 +86,21 @@ body.products {
     font-family: "minion-pro",Serif;
   }
 }
+
+.products-header1 {
+  margin: 0 0 30px;
+  max-width: 100%;
+
+  h1 {
+    padding: 0 0 10px;
+    margin-bottom: 20px;
+    color: #12a7ad;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: italic;
+    font-family: "minion-pro",Serif;
+  }
+}
 .search-field {
     width: calc(100% - 70px);
     background: $white;

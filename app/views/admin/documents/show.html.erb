@@ -1,86 +1,88 @@
-<div class="content-page-holder container">
-  <div class="products-inner">
+<div class="content-page-holder container w-100 mw-100">
+  <div class="products-inner pl-4">
     <div class="products-header">
-      <h1>Document Profile</h1>
+      <h1 class="pl-4">Document Profile</h1>
       <%=link_to "< Back to product profile",admin_product_path(@document.product),class:"link" %>
       <div class="action-items">
         <%=link_to "Edit",edit_admin_document_path(@document),class:"btn btn-primary" %>
-        <%=link_to "Delete","",class:"btn btn-primary" %>
+        <%=link_to "Delete",admin_document_path(@document),class:"btn btn-primary", data: { confirm: "Are you sure?" }, method: :delete %>
       </div>
     </div>
-    <div class="card card-show">
+    <div class="card card-show mb-5">
       <div class="card-body">
-        <div class="row mb-3">
-          <div class="col-md-6 list-lbl">
+        <div class="row mb-4">
+          <div class="col-md-3 list-lbl">
             Title
           </div>
-          <div class="col-md-6 list-val"><%=@document.title %></div>
+          <div class="col-md-9 list-val"><%=@document.title %></div>
         </div>
-        <div class="row mb-3">
-          <div class="col-md-6 list-lbl">
+        <div class="row mb-4">
+          <div class="col-md-3 list-lbl">
             Description
           </div>
-          <div class="col-md-6 list-val"><%=@document.description %></div>
+          <div class="col-md-9 list-val"><%=@document.description %></div>
         </div>
-        <div class="row mb-3">
-          <div class="col-md-6 list-lbl">
+        <div class="row mb-4">
+          <div class="col-md-3 list-lbl">
             File
           </div>
-          <div class="col-md-6 list-val"><%=link_to @document.attributes['file'], @document.file.url %></div>
+          <div class="col-md-9 list-val"><%=link_to @document.attributes['file'], @document.file.url %></div>
         </div>
-        <div class="row mb-3">
-          <div class="col-md-6 list-lbl">
+        <div class="row">
+          <div class="col-md-3 list-lbl">
             Public?
           </div>
-          <div class="col-md-6 list-val"><%=@document.public? %></div>
+          <div class="col-md-9 list-val"><%=@document.public? %></div>
         </div>
       </div>
     </div>
 <!--    version card-->
-    <div class="card card-show">
+    <div class="card card-show mb-5">
       <div class="card-body">
-        <div class="row mb-3">
-          <div class="col-md-6 list-lbl">
+        <div class="row mb-4">
+          <div class="col-md-3 list-lbl">
             Updated By
           </div>
-          <div class="col-md-6 list-val"><%=@document.versions.last.whodunnit  %></div>
+          <div class="col-md-9 list-val"><%=@document.versions.last.whodonit_user  %></div>
         </div>
-        <div class="row mb-3">
-          <div class="col-md-6 list-lbl">
+        <div class="row">
+          <div class="col-md-3 list-lbl">
             Updated At
           </div>
-          <div class="col-md-6 list-val"><%=format_date_time @document.updated_at  %></div>
+          <div class="col-md-9 list-val"><%=format_date_time @document.updated_at  %></div>
         </div>
       </div>
     </div>
 
-    <div class="card card-show">
+    <div class="card card-show mb-5">
       <h5 class="card-header my-card-header">Revisions</h5>
       <div class="card-body">
-        <table class="table revision-tbl">
-          <thead>
-          <tr>
-            <th>
-              <%= t('activerecord.attributes.document.updated_at') %>
-            </th>
-            <th>
-              <%= t('activerecord.attributes.document.updated_by') %>
-            </th>
-          </tr>
-          </thead>
-          <tbody>
-          <% @document.versions.reverse.each do |version| %>
-            <tr>
-              <td>
-                <%= format_date_time version.created_at %>
-              </td>
-              <td>
-                <%= version.whodonit_user %>
-              </td>
-            </tr>
-          <% end %>
-          </tbody>
-        </table>
+        <div class="table-responsive-sm">
+          <table class="table revision-tbl">
+            <thead>
+              <tr>
+                <th>
+                  <%= t('activerecord.attributes.document.updated_at') %>
+                </th>
+                <th>
+                  <%= t('activerecord.attributes.document.updated_by') %>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+            <% @document.versions.reverse.each do |version| %>
+              <tr>
+                <td>
+                  <%= format_date_time version.created_at %>
+                </td>
+                <td>
+                  <%= version.whodonit_user %>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 

@@ -1,13 +1,14 @@
+<div class="body-content container" style="max-width: 967px">
   <% if @products.present? %>
     <div class="tables-holder row  align-items-center justify-content-center product-search-listing">
-      <div class="table-responsive-sm col-md-6">
+      <div class="table-responsive-sm col-md-12 p-0">
         <table class="table">
           <thead>
           <tr>
-            <th scope="col"><%=sort_link(@q, :name, "Name") %></th>
-            <th scope="col"><%=sort_link(@q, :id, "Cefiles Record Number") %></th>
+            <th scope="col"><%=sort_link(@q, :name, "Product Name") %></th>
             <th scope="col"><%=sort_link(@q, :model_number, "Model Number") %></th>
             <th scope="col"><%=sort_link(@q, :product_company_name, "Company Name") %></th>
+            <th scope="col"><%=sort_link(@q, :id, "CE files Record Number") %></th>
 
           </tr>
           </thead>
@@ -15,9 +16,9 @@
           <%@products.each do |p| %>
             <tr>
               <td><%=link_to p.name,product_path(p.id) %></td>
-              <td><%= p.id %></td>
               <td><%=p.model_number %></td>
               <td><%=p.company.name.titleize %></td>
+              <td><%= p.id %></td>
             </tr>
           <% end %>
           </tbody>
@@ -31,11 +32,12 @@
 
       <%if request.query_string.present? %>
         <div class="col-md-6 pl-0" >
-          <p class=" mb-2">Your search has no results</p>
-          <%=link_to "Back", "#" , class:'link-as-btn mt-4',onClick:'history.go(-1);return false;' %>
+          <p class=" mb-2" style="color: #848484">Your search has no results.</p>
+          <%=link_to "Back", "#" , class:'submit-btn mt-1',onClick:'history.go(-1);return false;' %>
         </div>
       <%end %>
 
 </div>
 </div>
   <%end %>
+</div>

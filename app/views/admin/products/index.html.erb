@@ -26,7 +26,7 @@
             <th scope="col"><%=sort_link(@q, :company_name, "Company Name") %></th>
             <th scope="col"><%=sort_link(@q, :model_number, "Model Number") %></th>
             <th scope="col"><%=sort_link(@q, :product_category_name, "Product Category") %></th>
-            <th scope="col"><%=sort_link(@q, :id, "CE Files Record Number") %></th>
+            <th scope="col"><%=sort_link(@q, :id, "CE files Record Number") %></th>
             <th scope="col">Public URL</th>
             <th scope="col">Actions</th>
           </tr>
@@ -34,7 +34,11 @@
           <tbody>
           <%@products.each do |p| %>
             <tr>
-              <th scope="row"><%=p.published? ? (content_tag :span,"Published",class: 'true') : (content_tag :span,"Draft",class: 'false') %></th>
+              <% if p.published? %>
+                <th scope="row" style="color: #289a99"><%=p.published? ? (content_tag :span,"Published",class: 'true') : (content_tag :span,"Draft",class: 'false') %></th>
+              <% else %>
+                <th scope="row"><%=p.published? ? (content_tag :span,"Published",class: 'true') : (content_tag :span,"Draft",class: 'false') %></th>
+              <% end %>
               <td><%=link_to p.name,admin_product_path(p.id) %></td>
               <td><%= p.company.name %></td>
               <td><%=p.model_number %></td>

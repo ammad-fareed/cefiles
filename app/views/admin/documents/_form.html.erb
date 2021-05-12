@@ -17,11 +17,11 @@
       </div>
     </div>
     <div class="form-rows">
-      <%= f.input :public,as: :boolean,label:"Public",input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"} %>
+      <%= f.input :public,as: :boolean,label:"Public?",input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"} %>
     </div>
-    <div class="form-rows">
-      <%=f.submit f.object.new_record?? "Create Document" : "Save",class:"submit-btn",data: { disable_with: 'Please wait...' } %>
-    </div>
+  </div>
+  <div class="form-rows mr-3" style="text-align: right">
+    <%=f.submit f.object.new_record?? "Create Document" : "Save",class:"submit-btn",data: { disable_with: 'Please wait...' } %>
   </div>
 
 <%end %>

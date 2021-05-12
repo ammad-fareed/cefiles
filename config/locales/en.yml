@@ -25,6 +25,10 @@ en:
   subscriptions:
     plans:
       title: "Pricing"
+  devise:
+    passwords:
+      edit:
+        title: Change your password
   admin:
     application:
       navigation:

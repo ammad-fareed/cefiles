@@ -7,37 +7,40 @@
             <%=f.input :name,label:"Company Name",input_html:{class:"input-field"} %>
           </div>
         </div>
+        </div>
+        <div class="row">
         <div class="col-md-6">
           <div class="form-rows">
             <%= f.input :email ,label:"Company Email",input_html:{class:"input-field"} %>
           </div>
         </div>
-      </div>
-      <div class="row">
         <div class="col-md-6">
           <div class="form-rows">
             <%=f.input :phone_number,label:"Phone",input_html:{class:"input-field"} %>
           </div>
         </div>
+        </div>
+        <div class="row">
         <div class="col-md-6">
           <div class="form-rows">
             <%= f.association :industry ,label:"Industry",input_html:{class:"input-field"} %>
           </div>
         </div>
-      </div>
-      <div class="row">
         <div class="col-md-6">
           <div class="form-rows">
             <%=f.input :website,input_html:{class:"input-field"} %>
           </div>
         </div>
+        </div>
+        <div class="row">
         <div class="col-md-6">
           <div class="form-rows">
             <%= f.input :published_product_limit, as: :select, collection: [10, 20, 30, 40, 50] ,input_html:{class:"input-field"} %>
-            <label>The number of products this company is allowed to publish.</label>
+            <label style="font-style: italic;">The number of products this company is allowed to publish.</label>
           </div>
         </div>
       </div>
+      <hr>
       <%#f.object.address || f.object.build_address %>
       <%= render "admin/shared/address", ff:f %>
       <div class="row">

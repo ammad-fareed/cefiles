@@ -93,6 +93,6 @@ class Admin::UsersController < Admin::ApplicationController
   end
   private
   def user_params
-    params.require(:user).permit(:given_name,:family_name,:email,:company_id,:password,:password_confirmation)
+    params.require(:user).permit(:given_name,:archived,:family_name,:email,:company_id,:password,:password_confirmation)
   end
 end

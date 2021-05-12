@@ -98,6 +98,8 @@
   a{
     color: #2eb5ab;
     text-decoration: underline;
+    font-size: 13px;
+    font-family: Arial;
   }
 }
 .all_suppliers{
@@ -105,10 +107,16 @@
 }
 .sales-representative{
   margin-bottom: 30px;
-  border-bottom: 1px dotted;
+ // border-bottom: 1px dotted;
 }
 .product-docs{
   margin-top: 1rem;
+  ul > li a{
+    color: $primary;
+    text-decoration: underline;
+  }
+}
+.product-docs1{
   ul > li a{
     color: $primary;
     text-decoration: underline;

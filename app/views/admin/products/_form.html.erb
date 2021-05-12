@@ -16,7 +16,8 @@
       </div>
     </div>
     <div class="form-rows">
-      <%= f.input :published,as: :boolean,label:"Published? By checking this box, this product record will be publicly available on the CE files website for anyone to view.",input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"} %>
+      <%= f.input :published,as: :boolean,label:"Published?",input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"} %>
+      <span class="passowrd-message">By checking this box, this product record will be publicly available on the CE files website for anyone to view.</span>
     </div>
     <%if !@product.new_record? %>
       <div class="form-rows qr-container">
@@ -30,7 +31,7 @@
       <%= f.input :model_number ,error:"Required field",label:"Model/Type No",input_html:{class:"input-field"} %>
     </div>
     <div class="form-rows">
-     <%= f.input :product_category_id,collection:ProductCategory.formatted_categories,error:"Required field",input_html:{class:"custom-select mb-3"}, required: true ,label:"Product Category" %>
+     <%= f.input :product_category_id,collection:ProductCategory.formatted_categories,error:"Required field",input_html:{class:"input-field custom-select mb-3"}, required: true ,label:"Product Category" %>
     </div>
     <div class="form-rows">
       <div class="custom-file">
@@ -39,7 +40,7 @@
 
     </div>
     <div class="form-rows">
-      <label for="">Only jpg, jpeg, png, gif files accepted</label>
+      <span class="passowrd-message">Only jpg, jpeg, png, gif files accepted</span>
     </div>
     <%if @product.image.present? %>
       <div class="form-rows">

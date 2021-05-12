@@ -20,7 +20,7 @@
       <li><%= link_to "Products",admin_products_path %></li>
       <li><%= link_to "Enquiries",admin_enquiries_path if current_user.admin? %></li>
 
-      <li class="current-user"><%="Signed in as #{current_user.display_name}"%> </li>
+      <li class="current-user" style="color: #a0a2a2"><%="Signed in as #{current_user.display_name}"%> </li>
       <li class="logout-tab"><%=link_to "Logout", destroy_user_session_path, :method => 'delete' %></li>
     </ul>
   </div>

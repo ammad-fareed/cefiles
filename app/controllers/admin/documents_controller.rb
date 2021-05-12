@@ -33,8 +33,9 @@ class Admin::DocumentsController < Admin::ApplicationController
   end
 
   def destroy
+    product = @document.product
     @document.destroy
-    respond_with @document, location: admin_product_path(@document.product)
+    redirect_to admin_product_path(product)
   end
   private
   def docs_params

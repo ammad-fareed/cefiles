@@ -13,14 +13,20 @@
   <div class="navigation-holder">
     <ul class="navigation dropdown-element">
       <li><%=link_to "Home",root_path %></li>
+      <span>.</span>
+      <li><%= link_to "Contact",contact_path %></li>
+      <span>.</span>
       <%if user_signed_in?  %>
         <li><%=link_to "Dashboard",admin_root_path %></li>
+        <span>.</span>
       <%end %>
-      <li><%= link_to "Contact",contact_path %></li>
       <%if current_user %>
+        <li>Signed in as <%= [current_user.given_name, current_user.family_name].join(' ') %></li>
+        <span>.</span>
         <li><%=link_to "Logout",destroy_user_session_path, method: :delete,class:"active logout-btn" %></li>
       <%else %>
-        <li><%=link_to "Register",plans_path %></li>
+        <li><%=link_to "Pricing",plans_path %></li>
+        <span>.</span>
         <li><%=link_to "Login" , new_user_session_path ,:class => 'login-btn'%></li>
       <%end %>
     </ul>

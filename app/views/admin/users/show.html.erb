@@ -1,7 +1,7 @@
-<div class="content-page-holder container">
-  <div class="products-inner">
+<div class="content-page-holder container w-100 mw-100">
+  <div class="products-inner pl-4">
     <div class="products-header">
-      <h1>User Profile</h1>
+      <h1 class="pl-4">User Profile</h1>
       <div class="">
         <%=link_to "Edit",edit_admin_user_path(@user),class:"btn btn-primary action-btn" %>
         <% if can? :archive, @user %>
@@ -10,30 +10,30 @@
 
       </div>
     </div>
-    <div class="card card-show">
-
+    <div class="card card-show mb-4">
+      <h5 class="card-header my-card-header">User Details</h5>
       <div class="card-body">
-        <div class="row mb-4">
-          <div class="col-md-6 list-lbl">
+        <div class="row mb-5">
+          <div class="col-md-3 list-lbl">
             Name
           </div>
-          <div class="col-md-6 list-val"><%=@user.display_name %></div>
+          <div class="col-md-9 list-val"><%=@user.display_name %></div>
         </div>
-        <div class="row mb-4">
-          <div class="col-md-6 list-lbl">Email</div>
-          <div class="col-md-6 list-val"><%=@user.email %></div>
+        <div class="row mb-5">
+          <div class="col-md-3 list-lbl">Email</div>
+          <div class="col-md-9 list-val"><%=@user.email %></div>
         </div>
-        <div class="row mb-4">
-          <div class="col-md-6 list-lbl">Company</div>
-          <div class="col-md-6 list-val"><%= @user.company %></div>
+        <div class="row mb-5">
+          <div class="col-md-3 list-lbl">Company</div>
+          <div class="col-md-9 list-val"><%= @user.company %></div>
         </div>
-        <div class="row mb-4">
-          <div class="col-md-6 list-lbl">Administrator?</div>
-          <div class="col-md-6 list-val"><%=@user.admin? %></div>
+        <div class="row mb-5">
+          <div class="col-md-3 list-lbl">Administrator?</div>
+          <div class="col-md-9 list-val"><%=@user.admin? %></div>
         </div>
-        <div class="row mb-4">
-          <div class="col-md-6 list-lbl">Archived?</div>
-          <div class="col-md-6 list-val"><%=@user.archived? %></div>
+        <div class="row">
+          <div class="col-md-3 list-lbl">Archived?</div>
+          <div class="col-md-9 list-val"><%=@user.archived? %></div>
         </div>
 
       </div>

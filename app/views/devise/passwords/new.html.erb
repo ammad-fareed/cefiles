@@ -1,13 +1,12 @@
-
 <div class="content-page-holder reset-password">
-  <div class="container login">
+  <div class="container login" style="max-width: 960px">
     <h1>Forgot your password?</h1>
     <div class="mt-4">
       <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name),html: { method: :post }) do |f| %>
         <%#= render "devise/shared/error_messages", resource: resource %>
-        <div class="row">
+        <div class="row ml-3">
         <div class="col col-lg-6 col-sm-12">
-        <div class="form-rows">
+        <div class="form-rows" style="margin-bottom: -25px">
           <%=f.input :email,autofocus: true, autocomplete: "email" , label:"Email",input_html:{class:"input-field"} %>
         </div>
         </div>
@@ -26,5 +25,3 @@
     </div>
   </div>
 </div>
-
-

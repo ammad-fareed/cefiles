@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="mb-3 register-btn">
-  <%= link_to "Register", new_registration_path(resource_name) %>
+  <%= link_to "Register", plans_path %>
   <%- if devise_mapping.recoverable? && controller_name != 'passwords'  %>
   <%= link_to "Forgot your password?", new_password_path(resource_name) %>
   <% end %>

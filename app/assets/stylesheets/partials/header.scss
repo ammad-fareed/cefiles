@@ -11,6 +11,10 @@ body {
   padding:0;
   height:100%;
 }
+
+
+ 
+
 @media only screen and (max-width: 1000px){
   .main-content{
     .body-content{
@@ -173,12 +177,13 @@ ul.navigation {
     text-align: center;
     li {
       display: inline-block;
+      color: $gray;
+      font-size: 13px;
       a {
         background: none;
         color: $gray;
         padding: 10px 15px;
         font-size: 13px;
-        font-weight: bold;
         border: none;
         border: 1px solid $white;
         &:hover {

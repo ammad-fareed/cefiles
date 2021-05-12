@@ -2,14 +2,14 @@
   <div class="container subscription-container">
     <div class="row">
 
-      <%@plans.each do |p|%>
+      <%@plans.reverse.each do |p|%>
         <div class="col-xs-12 col-md-6 plan-box">
           <div class="card plans-card panel-<%=p[:nickname]=='Silver'? "success" : "primary"%>">
             <div class="card-header plans-card-header <%=p[:nickname]=='Silver'? "bg-plans-success" : "bg-plans-primary"%>">
               <h3 class="panel-title">
                 <%=p[:nickname]%></h3>
             </div>
-            <div class="plans-body card-body">
+            <div class="plans-body">
               <div class="the-price">
                 <h1>
                   <span class="subscript">$<%=p[:amount]/100%> Per Month</span></h1>
@@ -43,10 +43,7 @@
     <div class="row">
       <div class="col-md-12">
         <hr>
-        <p class="subscription-instructions">Subscriptions are month by month with no minimum term</p>
-        <p class="subscription-instructions">Up to 500MB storage for each product page</p>
-        <p class="subscription-instructions">Includes QR code creation
-        </p>
+        <p class="subscription-instructions" style="line-height: 1.4; color: #898989;">Subscriptions are month by month with no minimum term </br> Up to 500MB storage for each product page </br> Includes QR code creation</p>
       </div>
 
     </div>

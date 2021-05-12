@@ -34,7 +34,9 @@
         <div class="col-md-6">
           <div class="form-rows">
             <%=f.input :password,input_html:{class:"input-field"} %>
-            <span class="passowrd-message">(leave blank if you don't want to change it)</span>
+            <% unless f.object.new_record? %>
+              <span class="passowrd-message">(leave blank if you don't want to change it)</span>
+            <% end %>
           </div>
         </div>
         <div class="col-md-6">
@@ -43,10 +45,17 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-rows">
+            <%= f.input :archived,as: :boolean,label:"Archived?",input_html:{class:"custom-control-input checkboxes"},label_html:{class:"custom-control-label"} %>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
-  <div class="form-rows">
+  <div class="form-rows mr-3" style="text-align: right">
     <%=f.submit class:"submit-btn",data: { disable_with: 'Please wait...' } %>
   </div>
 <%end %>

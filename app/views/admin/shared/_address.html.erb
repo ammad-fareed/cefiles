@@ -8,26 +8,35 @@
       </div>
       <div class="col-md-6">
         <div class="form-rows">
-          <%= address.input :country_id, as: :select, required:true, collection: Country.pluck(:name,:id),input_html:{class:"custom-select mb-3"} %>
+          <%= address.input :country_id, as: :select, required:true, collection: Country.pluck(:name,:id),input_html:{class:"custom-select"} %>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-6">
         <div class="form-rows">
-          <%= address.input :city, required: true,input_html: {class: "input-field"} %>
+         <%= address.input :address_line_2,required: true,autocomplete:false,label:"Address Line 2", input_html: {class: "input-field"} %>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-rows">
-          <%= address.input :state,label:"State/Province/Region",required: true, input_html: {autocomplete: "off"},input_html: {class: "input-field"} %>
+          <%= address.input :city, required: true,input_html: {class: "input-field"} %>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="form-rows">
-    <%= address.input :postal_code,label:"ZIP/Postal Code", input_html: {class: "input-field"} %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-rows">
+        <%= address.input :postal_code,label:"ZIP/Postal Code", input_html: {class: "input-field"} %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-rows">
+        <%= address.input :state,label:"State/Province/Region",required: true, input_html: {autocomplete: "off"},input_html: {class: "input-field"} %>
+      </div>
+    </div>
   </div>
   </div>
   </div>

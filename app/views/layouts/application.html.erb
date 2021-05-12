@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= page_title %></title>
+    <title><%= page_title %> - CE files</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
@@ -14,11 +14,9 @@
 
   <body>
     <div class="main-content">
-      <div class="body-content">
-        <%= render partial: "layouts/flash_partial",flash:flash%>
-        <%=render partial: "layouts/application_header" %>
-        <%= yield %>
-      </div>
+      <%= render partial: "layouts/flash_partial",flash:flash%>
+      <%=render partial: "layouts/application_header" %>
+      <%= yield %>
       <%=render partial: "layouts/application_footer" %>
       <div id="overlay" style="display:none;">
         <div class="spinner"></div>

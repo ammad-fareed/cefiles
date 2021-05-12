@@ -15,10 +15,12 @@
 
   .list-lbl{
     font-weight: bold;
-    color: $lightGray
+    color: $lightGray;
+    font-size: 14px;
   }
   .list-val{
     color: $lightGray;
+    font-size: 14px;
   }
   a{
     color: $lightGray;

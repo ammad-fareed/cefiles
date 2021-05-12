@@ -82,6 +82,6 @@ class Admin::CompaniesController < Admin::ApplicationController
   private
   def company_params
     params.require(:company).permit(:name,:email,:website,:phone_number,:industry_id,:published_product_limit,:card_token,address_attributes:
-        [:id,:address_line_1,:country_id,:city,:state,:postal_code])
+        [:id,:address_line_1,:address_line_2,:country_id,:city,:state,:postal_code])
   end
 end
