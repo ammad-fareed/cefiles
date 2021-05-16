@@ -17,32 +17,32 @@
       <div class="specs-col list">
         <h2>Technical Specifications</h2>
         <div class="specs-row mt-2">
-          <span>Company Name</span>
+          <span style="font-size: 14px">Company Name</span>
           <span><%=@product.company %></span>
         </div>
         <div class="specs-row mt-2">
-          <span>Model Number</span>
+          <span style="font-size: 14px">Model Number</span>
           <span><%=@product.model_number %></span>
         </div>
         <div class="specs-row mt-2">
-          <span>Product Category</span>
+          <span style="font-size: 14px">Product Category</span>
           <span><%=@product.product_category.name.titleize %></span>
         </div>
         <%if @product.notified_body_number.present? %>
           <div class="specs-row mt-2">
-            <span><%=t('activerecord.attributes.product.notified_body_number') %></span>
+            <span style="font-size: 14px"><%=t('activerecord.attributes.product.notified_body_number') %></span>
             <span><%=@product.notified_body_number %></span>
           </div>
         <%end %>
         <% if @product.ce_mark_year.present? %>
           <div class="specs-row mt-2">
-            <span><%= t('activerecord.attributes.product.ce_mark_year') %></span>
+            <span style="font-size: 14px"><%= t('activerecord.attributes.product.ce_mark_year') %></span>
             <span><%=@product.ce_mark_year %></span>
           </div>
         <%end %>
         <%if @product.description.present? %>
           <div class="specs-row mt-2">
-            <span><%=t('activerecord.attributes.product.description') %></span>
+            <span style="font-size: 14px">Description</span>
             <span><%=@product.description.truncate(470) %></span>
           </div>
         <%end %>
@@ -52,63 +52,58 @@
           <h2><%=t('.documentation') %></h2>
           <ul class="mt-2">
             <%@product.documents.public_docs.each do |document| %>
-              <li class="<%= @product.documents.public_docs.last==document ? '' : 'mb-3' %>"><%=link_to document.title, document.file.url %></li>
+              <li style="font-size: 13px; color: #848484" class="<%= @product.documents.public_docs.last==document ? '' : 'mb-3' %>"><%=link_to document.title, document.file.url %></li>
             <%end %>
           </ul>
 
         </div>
       <%end %>
       <%if @product.all_suppliers.present? %>
-        <div class="specs-col detail">
-          <h2><%=t('.supplier') %></h2>
-          <%@product.all_suppliers.each do |sup| %>
+        <%@product.all_suppliers.each do |sup| %>
+          <div class="specs-col detail">
+            <h2><%=t('.supplier') %></h2>
+            <iframe
+              width=100%
+              height=220
+              style="border:0"
+              loading="lazy"
+              allowfullscreen
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFDIdWi-zgkTgFnawN04u6PaDNUtUB0xY
+                &q=<%= "#{sup.address.address_line_1}, #{sup.address.city}, #{sup.address.country}"%> ">
+            </iframe>
             <div class="specs-row mt-2">
-              <span>Name</span>
               <span><%=sup.name %></span>
             </div>
             <%if sup.try(:email).present? %>
-            <div class="specs-row mt-2">
-              <span>Email</span>
+            <div class="specs-row">
               <span><%=mail_to "#{sup.email}?Subject=Contact Seller","Email Seller" %></span>
             </div>
             <%end %>
             <%if sup.try(:phone).present? %>
-              <div class="specs-row mt-2">
-                <span>Phone</span>
+              <div class="specs-row">
                 <span><%=sup.phone %></span>
               </div>
             <%end %>
             <%if  sup.address.address_line_1.present? %>
-              <div class="specs-row mt-2">
-                <span>Address 1</span>
+              <div class="specs-row">
                 <span><%=sup.address.address_line_1 %></span>
               </div>
             <%end %>
             <%if  sup.address.address_line_2.present? %>
-              <div class="specs-row mt-2">
-                <span>Address 2</span>
+              <div class="specs-row">
                 <span><%=sup.address.address_line_2 %></span>
               </div>
             <%end %>
             <%if  sup.address.city.present? && sup.address.state.present? %>
-              <div class="specs-row mt-2">
-                <span>City/State</span>
-                <span><%="#{sup.address.city}, #{sup.address.state}" %></span>
+              <div class="specs-row">
+                <span><%="#{sup.address.city.camelcase}, #{sup.address.state.camelcase}" %></span>
               </div>
             <%end %>
-            <%if sup.address.postal_code.present? %>
-              <div class="specs-row mt-2">
-                <span>Postal Code</span>
-                <span><%=sup.address.postal_code %></span>
-              </div>
-            <%end %>
-            <div class="specs-row mt-2">
-              <span>Country</span>
-              <span><%=sup.address.country %></span>
+            <div class="specs-row">
+              <span><%= sup.address.postal_code.present? ? "#{sup.address.country}, #{sup.address.postal_code}" : sup.address.country %></span>
             </div>
-          <%end %>
-
-        </div>
+          </div>
+        <%end %>
       <%end %>
 
 
