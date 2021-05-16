@@ -48,7 +48,7 @@
         <%end %>
       </div>
       <%if @product.documents.public_docs.any? %>
-        <div class="specs-col documentation-section detail mt-2">
+        <div class="specs-col documentation-section detail">
           <h2><%=t('.documentation') %></h2>
           <ul class="mt-2">
             <%@product.documents.public_docs.each do |document| %>
