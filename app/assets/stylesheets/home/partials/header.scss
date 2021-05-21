@@ -128,21 +128,17 @@ ul.navigation {
       display: inline-block;
       a {
         background: none;
-        color: $gray;
-        padding: 10px 15px;
+        color: #615D5D !important;
         font-size: 13px;
         font-weight: bold;
         border: none;
         border: 1px solid $white;
+        padding: 9px 20px !important;
         &:hover {
-          color: $files;
-          -webkit-border-top-left-radius: 15px;
-          -webkit-border-bottom-right-radius: 15px;
-          -moz-border-radius-topleft: 15px;
-          -moz-border-radius-bottomright: 15px;
-          border-top-left-radius: 15px;
-          border-bottom-right-radius: 15px;
-          border: 1px solid $files;
+          color: $files !important;
+          border-top-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          border: 1px solid $files !important;
           background: none;
         }
       }

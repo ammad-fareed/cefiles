@@ -8,13 +8,13 @@
     </div>
   </div>
   <div class="specs-content">
-    <div class="container custom-container1">
+    <div class="container custom-container1" style="max-width: 988px; min-width: 988px;">
       <%if @product.image.present? %>
-        <div class="specs-col image">
+        <div class="specs-col image" style="margin-bottom: 10px; margin-right: -10px">
           <%= image_tag @product.image.url,class:"p-image",alt:"product-image"  %>
         </div>
       <%end %>
-      <div class="specs-col list">
+      <div class="specs-col list" style="margin-bottom: 10px; margin-left: -10px">
         <h2>Technical Specifications</h2>
         <div class="specs-row mt-2">
           <span style="font-size: 14px">Company Name</span>
@@ -48,7 +48,7 @@
         <%end %>
       </div>
       <%if @product.documents.public_docs.any? %>
-        <div class="specs-col documentation-section detail">
+        <div class="specs-col documentation-section detail" style="margin-bottom: 10px; margin-right: -10px">
           <h2><%=t('.documentation') %></h2>
           <ul class="mt-2">
             <%@product.documents.public_docs.each do |document| %>
@@ -59,8 +59,8 @@
         </div>
       <%end %>
       <%if @product.all_suppliers.present? %>
-        <%@product.all_suppliers.each do |sup| %>
-          <div class="specs-col detail">
+        <%@product.all_suppliers.each.with_index do |sup, index| %>
+          <div class="specs-col detail" style="margin-bottom: 10px; margin-<%= index%2==0 ? 'left' : 'right' %>: -10px">
             <h2><%=t('.supplier') %></h2>
             <iframe
               width=100%
@@ -105,8 +105,6 @@
           </div>
         <%end %>
       <%end %>
-
-
     </div>
   </div>
 </div>
