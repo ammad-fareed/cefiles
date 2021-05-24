@@ -11,23 +11,23 @@
     <%=link_to root_path do  %><%=image_tag "logo.svg",alt:"logo" %> <%end%>
   </div>
   <div class="navigation-holder">
-    <ul class="navigation dropdown-element">
+    <ul class="navigation dropdown-element row">
       <li><%=link_to "Home",root_path %></li>
-      <span>.</span>
-      <li><%= link_to "Contact",contact_path %></li>
-      <span class="ml-1">.</span>
+      <div style="margin: 6px"><span>.</span></div>
+      <li style="margin-left: -5px"><%= link_to "Contact",contact_path %></li>
+      <div style="margin: 6px"><span>.</span></div>
       <%if user_signed_in?  %>
-        <li class="mr-1"><%=link_to "Dashboard",admin_root_path %></li>
-        <span>.</span>
+        <li style="margin-left: -5px" class="mr-1"><%=link_to "Dashboard",admin_root_path %></li>
+        <div style="margin: 6px"><span>.</span></div>
       <%end %>
       <%if current_user %>
-        <li class="ml-3 mr-3">Signed in as <%= [current_user.given_name, current_user.family_name].join(' ') %></li>
-        <span class="mr-3">.</span>
-        <li><%=link_to "Logout",destroy_user_session_path, method: :delete,class:"active logout-btn" %></li>
+        <li class="mr-3" style="margin-top: 11px; margin-left: 12px">Signed in as <%= [current_user.given_name, current_user.family_name].join(' ') %></li>
+        <div style="margin: 6px"><span>.</span></div>
+        <li style="margin-left: 10px"><%=link_to "Logout",destroy_user_session_path, method: :delete,class:"active logout-btn" %></li>
       <%else %>
-        <li class="mr-1"><%=link_to "Pricing",plans_path %></li>
-        <span class="mr-3">.</span>
-        <li><%=link_to "Login" , new_user_session_path ,:class => 'login-btn'%></li>
+        <li style="margin-left: -2px"><%=link_to "Pricing",plans_path %></li>
+        <div style="margin: 6px"><span>.</span></div>
+        <li style="margin-left: 10px"><%=link_to "Login" , new_user_session_path ,:class => 'login-btn'%></li>
       <%end %>
     </ul>
   </div>
